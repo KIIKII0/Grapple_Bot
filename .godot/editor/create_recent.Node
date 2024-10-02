@@ -1,7 +1,8 @@
-Area3D
 MeshInstance3D
-Node3D
 Node
+GridMap
+Area3D
+Node3D
 RayCast3D
 VBoxContainer
 Label
@@ -11,4 +12,3 @@ AnimationPlayer
 OmniLight3D
 GPUParticles3D
 CPUParticles3D
-GridMap

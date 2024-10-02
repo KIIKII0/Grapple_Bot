@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtpsxrfqijcq7"]
+[gd_scene load_steps=6 format=3 uid="uid://dtpsxrfqijcq7"]
 
 [ext_resource type="Script" path="res://Character/Bob.gd" id="1_rwiwa"]
 [ext_resource type="PackedScene" uid="uid://s12xl6jvj61f" path="res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn" id="2_mu4fk"]
@@ -8,16 +8,11 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvhaa"]
 radius = 0.615
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_q3ub2"]
-
 [node name="Bob" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_rwiwa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hvhaa")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_q3ub2")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637744, -0.201754)

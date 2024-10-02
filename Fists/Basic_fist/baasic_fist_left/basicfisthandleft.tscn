@@ -37,7 +37,7 @@ func _physics_process(delta):
 		if not hookpoint_get:
 			hookpoint = grapple_reach.get_collision_point()
 			hookpoint_get = true
-		if hookpoint.distance_to(character.transform.origin) > 5:
+		if hookpoint.distance_to(character.transform.origin) > 3:
 			var hook_direction = hookpoint - character.transform.origin
 			if hookpoint_get:
 				rope_update()
@@ -589,5 +589,3 @@ transform = Transform3D(-2.18557e-08, -1, 0, 0.5, -4.37114e-08, 0, 0, 0, 1, 1.11
 visible = false
 mesh = SubResource("CylinderMesh_wr6hr")
 surface_material_override/0 = SubResource("StandardMaterial3D_jvxea")
-
-[connection signal="body_entered" from="hurt_box" to="." method="_on_hurt_box_body_entered"]

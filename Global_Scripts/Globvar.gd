@@ -1,7 +1,7 @@
 extends Node
 
 
-var gravity = 10
+var gravity = 9.8
 
 #player variables
 var normal_speed: float = 10.0

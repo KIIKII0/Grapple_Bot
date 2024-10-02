@@ -26,15 +26,17 @@ var hookpoint_get = false
 func _ready():
 	$hurt_box/CollisionShape3D.disabled = true
 func _physics_process(delta):
+	print(hookpoint)
 	if Input.is_action_just_pressed(\"attack_right\") and parent_hand == \"right_arm\":
 		anima.play(\"basic attack\",-1, 2)
 		if grapple_reach.is_colliding() and not grappling:
 			grappling = true
+		
 	if grappling:
 		if not hookpoint_get:
 			hookpoint = grapple_reach.get_collision_point()
 			hookpoint_get = true
-		if hookpoint.distance_to(character.transform.origin) > 5:
+		if hookpoint.distance_to(character.transform.origin) > 3:
 			var hook_direction = hookpoint - character.transform.origin
 			if hookpoint_get:
 				rope_update()
@@ -43,6 +45,7 @@ func _physics_process(delta):
 			grappling = false
 			hookpoint_get = false
 			rope.visible = false
+	
 
 		if Input.is_action_just_pressed(\"jump\") and grappling:
 			grappling = false
@@ -535,5 +538,3 @@ transform = Transform3D(-2.18557e-08, -1, 0, 0.5, -4.37114e-08, 0, 0, 0, 1, 1.11
 visible = false
 mesh = SubResource("CylinderMesh_4hq8q")
 surface_material_override/0 = SubResource("StandardMaterial3D_pk6n0")
-
-[connection signal="body_entered" from="hurt_box" to="." method="_on_hurt_box_body_entered"]

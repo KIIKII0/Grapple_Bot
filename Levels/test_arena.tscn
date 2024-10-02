@@ -1,9 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://crhtid1xla64c"]
+[gd_scene load_steps=24 format=3 uid="uid://crhtid1xla64c"]
 
 [ext_resource type="Script" path="res://Levels/test_arena.gd" id="1_gqnpy"]
 [ext_resource type="PackedScene" uid="uid://dtpsxrfqijcq7" path="res://Character/Bob.tscn" id="2_wkij7"]
-[ext_resource type="PackedScene" uid="uid://dh2wqfe0ut84c" path="res://build blocks/build_structure/lava.tscn" id="4_1vpqt"]
-[ext_resource type="PackedScene" uid="uid://po6edalltuig" path="res://build blocks/build_structure/Speed_surface.tscn" id="5_xqjkw"]
 [ext_resource type="PackedScene" uid="uid://bdgjmapd785cg" path="res://Control_Scene/pause_menu.tscn" id="6_dbujg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ww15y"]
@@ -186,9 +184,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 [node name="Pause_Menu" parent="." instance=ExtResource("6_dbujg")]
 
 [node name="Level_obstacle" type="Node" parent="."]
-
-[node name="lava" parent="." instance=ExtResource("4_1vpqt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
-
-[node name="speed_surface" parent="." instance=ExtResource("5_xqjkw")]
-transform = Transform3D(9.575, 0, 0, 0, 0.1, 0, 0, 0, 1.50718, -2, -0.0198123, 11)

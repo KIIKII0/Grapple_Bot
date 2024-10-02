@@ -77,7 +77,6 @@ func _input(event):
 #handle speed and number or jumps and also gravity
 
 func _physics_process(delta):
-	print(boost)
 	update_speedometer()
 	match cuurent_state:
 		movement.Walking:
