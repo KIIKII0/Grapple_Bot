@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://vbrcmcgmv0du"]
+
+[ext_resource type="Texture2D" uid="uid://wnxbfr1ftrp6" path="res://build blocks/Skybox/BlueSkySkybox.png" id="1_khb8j"]
+[ext_resource type="Script" path="res://Levels/First_Level/first_level.gd" id="1_qrqxy"]
+[ext_resource type="PackedScene" uid="uid://dtpsxrfqijcq7" path="res://Character/Bob.tscn" id="3_2kqdn"]
+[ext_resource type="PackedScene" uid="uid://cd4e0pwidhxje" path="res://Levels/First_Level/level_1.tscn" id="5_104rn"]
+[ext_resource type="PackedScene" uid="uid://bdgjmapd785cg" path="res://Control_Scene/pause_menu.tscn" id="5_hmi15"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yuwa3"]
+panorama = ExtResource("1_khb8j")
+
+[sub_resource type="Sky" id="Sky_qi0o6"]
+sky_material = SubResource("PanoramaSkyMaterial_yuwa3")
+
+[sub_resource type="Environment" id="Environment_7idi2"]
+background_mode = 2
+sky = SubResource("Sky_qi0o6")
+sky_rotation = Vector3(0, 0, 1.13272)
+reflected_light_source = 2
+tonemap_mode = 3
+glow_enabled = true
+
+[node name="First_Level" type="Node3D"]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0289, -3.95166, -0.843254)
+script = ExtResource("1_qrqxy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0.250002, 0.0580116, 0.966506, -0.433016, 0.899518, 0.0580154, -2, 49, -23)
+light_color = Color(0.352941, 0.623529, 0.698039, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7idi2")
+
+[node name="Bob" parent="." instance=ExtResource("3_2kqdn")]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.38705, 5.23323, 36.4958)
+
+[node name="level_1" parent="." instance=ExtResource("5_104rn")]
+
+[node name="Pause_Menu" parent="." instance=ExtResource("5_hmi15")]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtpsxrfqijcq7"]
+
+[ext_resource type="Script" path="res://Character/Bob.gd" id="1_rwiwa"]
+[ext_resource type="FontFile" uid="uid://cvv4h0icwkof8" path="res://build blocks/Font/Xolonium-Bold.ttf" id="2_ry2x5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvhaa"]
+radius = 0.615
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_q3ub2"]
+
+[node name="Bob" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_rwiwa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_hvhaa")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_q3ub2")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637744, -0.201754)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.178129)
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -3)
+
+[node name="grapple_reach" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -50)
+
+[node name="arms" type="Node3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.637744, 0.379883)
+visible = false
+
+[node name="right_arm" type="Node3D" parent="Head/Camera3D/arms"]
+transform = Transform3D(0.325568, 0.945519, 0, -0.945518, 0.325568, 0, 0, 0, 1, 0.295, 0.315, -0.91)
+
+[node name="left_arm" type="Node3D" parent="Head/Camera3D/arms"]
+transform = Transform3D(0.325568, -0.945519, 0, 0.945518, 0.325568, 0, 0, 0, 1, -0.295, 0.315, -0.91)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="essential_container" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.817
+anchor_right = 0.226
+anchor_bottom = 1.0
+offset_left = 0.48
+offset_top = -0.360046
+offset_right = -0.920013
+grow_vertical = 0
+
+[node name="Health_Bar" type="Label" parent="UI/essential_container"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(6.35326e-06, 0.740654, 0.22988, 0.835294)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_ry2x5")
+theme_override_font_sizes/font_size = 90
+text = "health"
+clip_text = true
+
+[node name="speedometer" type="Label" parent="UI/essential_container"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.996078, 1, 1, 0.905882)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("2_ry2x5")
+theme_override_font_sizes/font_size = 70
+text = "speed"
+clip_text = true

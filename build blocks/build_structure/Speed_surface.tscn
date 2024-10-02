@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://po6edalltuig"]
+
+[ext_resource type="Texture2D" uid="uid://fouixml7hv7f" path="res://build blocks/build_structure/arrow.png" id="1_cobil"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddfir"]
+transparency = 1
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_cobil")
+roughness = 0.4
+emission_enabled = true
+emission = Color(1, 0.678431, 0, 1)
+emission_energy_multiplier = 0.5
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.51572
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ss7w4"]
+material = SubResource("StandardMaterial3D_ddfir")
+
+[sub_resource type="GDScript" id="GDScript_16m47"]
+script/source = "extends MeshInstance3D
+
+var boost = 2
+func _on_area_3d_body_entered(body):
+		if body.is_in_group(\"Player\"):
+			get_tree().call_group(\"Player\", \"speed_boost\", true ,boost)
+
+
+func _on_area_3d_body_exited(body):
+		if body.is_in_group(\"Player\"):
+			get_tree().call_group(\"Player\", \"speed_boost\", false)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5aoiw"]
+
+[node name="speed_surface" type="MeshInstance3D"]
+transform = Transform3D(4.92821, 0, 0, 0, 0.1, 0, 0, 0, 1.73963, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ss7w4")
+script = SubResource("GDScript_16m47")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(2.03927, 0, 0, 0, 2.71372, 0, 0, 0, 2.17715, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.135, 0, 0, 0, 1.135, 0, 0, 0, 1.135, 0, 0, 0)
+shape = SubResource("BoxShape3D_5aoiw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

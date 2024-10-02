@@ -1,0 +1,14 @@
+Area3D
+MeshInstance3D
+Node3D
+Node
+RayCast3D
+VBoxContainer
+Label
+CollisionShape3D
+AnimationTree
+AnimationPlayer
+OmniLight3D
+GPUParticles3D
+CPUParticles3D
+GridMap

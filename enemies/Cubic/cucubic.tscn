@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqtyqyn15tw8q"]
+
+[ext_resource type="Script" path="res://enemies/Cubic/cucubic.gd" id="1_58xld"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pyowp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psknn"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.678352, 0.000346638, 0.678347, 1)
+roughness = 0.0
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ul5f"]
+material = SubResource("StandardMaterial3D_psknn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4ysoh"]
+size = Vector3(1.2, 1.2, 1.2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ff22t"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bj4yb"]
+bg_color = Color(1, 1, 1, 0.784314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62ndf"]
+bg_color = Color(0.901961, 0.129412, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="Cubic" type="RigidBody3D" groups=["Enemies"]]
+script = ExtResource("1_58xld")
+health = 100.0
+speed = 0.06
+damaga_dealt = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_pyowp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6ul5f")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="hurt_box" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurt_box"]
+shape = SubResource("BoxShape3D_4ysoh")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66688, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_ff22t")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+transparent_bg = true
+
+[node name="healthbar" type="ProgressBar" parent="SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -15.0
+offset_right = 75.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_bj4yb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_62ndf")
+show_percentage = false
+
+[connection signal="body_entered" from="hurt_box" to="." method="_on_hurt_box_body_entered"]

@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://d4nyjmwdnu5qg"
+path="res://.godot/imported/basic_fist_left_hand_3.png-d6dfcb66bd8f511334c6f7727f624fc2.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "46333c0bfad07c26247f1dbd36405f37"
+}
+
+[deps]
+
+source_file="res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_3.png"
+dest_files=["res://.godot/imported/basic_fist_left_hand_3.png-d6dfcb66bd8f511334c6f7727f624fc2.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
