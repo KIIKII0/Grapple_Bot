@@ -1,4 +1,11 @@
+SpringArm3D
 MeshInstance3D
+CSGPolygon3D
+CSGCylinder3D
+Path3D
+PathFollow3D
+SoftBody3D
+BoneAttachment3D
 Node
 GridMap
 Area3D
@@ -6,9 +13,3 @@ Node3D
 RayCast3D
 VBoxContainer
 Label
-CollisionShape3D
-AnimationTree
-AnimationPlayer
-OmniLight3D
-GPUParticles3D
-CPUParticles3D

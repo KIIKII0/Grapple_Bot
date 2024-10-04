@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cjf5h23u3e447"]
+[gd_scene load_steps=32 format=3 uid="uid://cjf5h23u3e447"]
 
 [ext_resource type="Texture2D" uid="uid://c43f84wcsh8l8" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_0.png" id="1_qyrgs"]
 [ext_resource type="Texture2D" uid="uid://d7hc3qb03ddy" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_1.png" id="2_t054h"]
@@ -11,9 +11,11 @@
 [sub_resource type="GDScript" id="GDScript_i1kbr"]
 script/source = "extends Node3D
 
+
 var grappling = false
 var hookpoint = Vector3()
 var hookpoint_get = false
+
 @onready var rope = $rope
 @onready var rope_start = $Node/tube22/rope_start
 @onready var hurtbox = $hurt_box
@@ -22,16 +24,16 @@ var hookpoint_get = false
 @onready var parent_hand = get_parent().get_name()
 @onready var character = get_tree().get_nodes_in_group(\"Player\")[0]
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$hurt_box/CollisionShape3D.disabled = true
+	
 func _physics_process(delta):
-	print(hookpoint)
 	if Input.is_action_just_pressed(\"attack_right\") and parent_hand == \"right_arm\":
 		anima.play(\"basic attack\",-1, 2)
 		if grapple_reach.is_colliding() and not grappling:
 			grappling = true
-		
 	if grappling:
 		if not hookpoint_get:
 			hookpoint = grapple_reach.get_collision_point()
@@ -55,12 +57,13 @@ func _physics_process(delta):
 func rope_update():
 		rope.visible = true
 		var distance_rope = hookpoint.distance_to(rope_start.global_transform.origin)
-		rope.scale.y = distance_rope /2.05
-		rope.scale.x = distance_rope / 3
+		rope.scale.y = 2
+		rope.scale.z = distance_rope / 2.05
 		var midpoint = (hookpoint + rope_start.global_transform.origin) / 2
 		rope.global_transform.origin = midpoint
 		rope.look_at(hookpoint,Vector3.UP)
 		rope.rotate_object_local(Vector3(1, 0, 0), deg_to_rad(90))
+
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkgm3"]
@@ -462,16 +465,33 @@ _data = {
 radius = 0.555998
 height = 1.5
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_4hq8q"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_khj23"]
 top_radius = 0.01
 bottom_radius = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk6n0"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qdgf8"]
+noise_type = 5
+frequency = 0.0705
+fractal_gain = 0.74
+fractal_weighted_strength = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6i6we"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_qdgf8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_642rk"]
 no_depth_test = true
 diffuse_mode = 3
 specular_mode = 1
-albedo_color = Color(0.103744, 0.103744, 0.103744, 1)
+albedo_color = Color(0.0923971, 0.0923971, 0.092397, 1)
+roughness = 0.05
+emission = Color(0.194349, 0.194349, 0.194349, 1)
+emission_energy_multiplier = 0.4
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_6i6we")
 backlight_enabled = true
+uv1_triplanar = true
 
 [node name="basicfisthandright" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.185, 0)
@@ -506,7 +526,7 @@ mesh = SubResource("ArrayMesh_hvj1c")
 skeleton = NodePath("")
 
 [node name="rope_start" type="Node3D" parent="Node/tube22"]
-transform = Transform3D(0.719339, 0.694658, -4.47035e-08, -0.676854, 0.700903, 0.224951, 0.156264, -0.161816, 0.97437, 0.114429, -0.208757, 0.0045279)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191976, -0.191051, 0.0156958)
 
 [node name="cylinder3" type="Node3D" parent="Node"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04375, 0.6, 0.08125)
@@ -523,6 +543,7 @@ libraries = {
 
 [node name="hurt_box" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03172, 0, 4.50978e-08)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hurt_box"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0151616, 0.25912, -6.62762e-10)
@@ -534,7 +555,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105835, 0.262235, 4.62621e-
 target_position = Vector3(50, 0, 0)
 
 [node name="rope" type="MeshInstance3D" parent="."]
-transform = Transform3D(-2.18557e-08, -1, 0, 0.5, -4.37114e-08, 0, 0, 0, 1, 1.11885, 0.275, 4.89063e-08)
 visible = false
-mesh = SubResource("CylinderMesh_4hq8q")
-surface_material_override/0 = SubResource("StandardMaterial3D_pk6n0")
+mesh = SubResource("CylinderMesh_khj23")
+surface_material_override/0 = SubResource("StandardMaterial3D_642rk")
