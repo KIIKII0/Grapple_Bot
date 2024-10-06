@@ -6,5 +6,6 @@ res://Levels/test_arena.tscn
 res://Character/Bob.tscn
 res://build blocks/build_structure/lava.tscn
 res://build blocks/build_structure/Speed_surface.tscn
-res://Levels/First_Level/first_level.tscn
 res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn
+res://Levels/First_Level/first_level.tscn
+res://Fists/Basic_fist/basicfist.tscn

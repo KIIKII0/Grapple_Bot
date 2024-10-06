@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cjf5h23u3e447"]
+[gd_scene load_steps=33 format=3 uid="uid://cjf5h23u3e447"]
 
 [ext_resource type="Texture2D" uid="uid://c43f84wcsh8l8" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_0.png" id="1_qyrgs"]
 [ext_resource type="Texture2D" uid="uid://d7hc3qb03ddy" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_1.png" id="2_t054h"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ldwo177pt47s" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_4.png" id="5_vertn"]
 [ext_resource type="Texture2D" uid="uid://c8s3vtrrykn1b" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_5.png" id="6_vvwco"]
 [ext_resource type="Animation" uid="uid://b8frs3metcp36" path="res://Fists/Basic_fist/basic_fist_right/basic attack.res" id="7_t87fh"]
+[ext_resource type="Texture2D" uid="uid://dim3vjseyke7q" path="res://Fists/Basic_fist/basic_fist_right/right_hand.png" id="8_70xj2"]
 
 [sub_resource type="GDScript" id="GDScript_i1kbr"]
 script/source = "extends Node3D
@@ -16,6 +17,7 @@ var grappling = false
 var hookpoint = Vector3()
 var hookpoint_get = false
 
+@onready var crosshair = $crosshair
 @onready var rope = $rope
 @onready var rope_start = $Node/tube22/rope_start
 @onready var hurtbox = $hurt_box
@@ -30,8 +32,18 @@ func _ready():
 	$hurt_box/CollisionShape3D.disabled = true
 	
 func _physics_process(delta):
+	#function to display crosshai in place when the raycast collide and dont show him when the character is grappling
+	if grapple_reach.is_colliding() and not grappling:
+		var crosshair_position = grapple_reach.get_collision_point() * 0.998
+		crosshair.global_transform.origin = crosshair_position + grapple_reach.get_collision_normal() * 0.3
+		crosshair.look_at(crosshair_position, Vector3.UP)
+		crosshair.visible = true
+	elif  grapple_reach.is_colliding() == false:
+		crosshair.visible = false
+	#function to actualy grapple
 	if Input.is_action_just_pressed(\"attack_right\") and parent_hand == \"right_arm\":
 		anima.play(\"basic attack\",-1, 2)
+		crosshair.visible = false
 		if grapple_reach.is_colliding() and not grappling:
 			grappling = true
 	if grappling:
@@ -47,13 +59,12 @@ func _physics_process(delta):
 			grappling = false
 			hookpoint_get = false
 			rope.visible = false
-	
-
-		if Input.is_action_just_pressed(\"jump\") and grappling:
-			grappling = false
-			hookpoint_get = false
-			rope.visible = false
-
+	#function to cancel grapple when not golding a button
+	if Input.is_action_just_released(\"attack_right\") and parent_hand == \"right_arm\":
+		grappling = false
+		hookpoint_get = false
+		rope.visible = false
+#function to update rope and its position
 func rope_update():
 		rope.visible = true
 		var distance_rope = hookpoint.distance_to(rope_start.global_transform.origin)
@@ -63,7 +74,7 @@ func rope_update():
 		rope.global_transform.origin = midpoint
 		rope.look_at(hookpoint,Vector3.UP)
 		rope.rotate_object_local(Vector3(1, 0, 0), deg_to_rad(90))
-
+		
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkgm3"]
@@ -558,3 +569,10 @@ target_position = Vector3(50, 0, 0)
 visible = false
 mesh = SubResource("CylinderMesh_khj23")
 surface_material_override/0 = SubResource("StandardMaterial3D_642rk")
+
+[node name="crosshair" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5196, 0, 1.53846e-07)
+visible = false
+pixel_size = 0.03
+texture = ExtResource("8_70xj2")
+region_rect = Rect2(0.03, 0, 0, 0)
