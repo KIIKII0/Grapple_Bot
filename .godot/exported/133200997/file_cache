@@ -1,0 +1,15 @@
+res://build blocks/build_structure/lamp.tscn::2071405cc6aaaf60e28d41094136a2e0::1724849225::res://.godot/exported/133200997/export-ace71cf8678a82630e3f42417c716af5-lamp.scn
+res://build blocks/build_structure/lava.tscn::a7b1f56177e86253d608a45fa86d5204::1728480546::res://.godot/exported/133200997/export-c3cbc2daf1454eda089f0e1bff23f77d-lava.scn
+res://build blocks/build_structure/points.tscn::174e97d0abd0a30a7cdc7c0cfce006c4::1728510898::res://.godot/exported/133200997/export-22d5b747151bf040be3e7406ecf9100c-points.scn
+res://build blocks/build_structure/Speed_surface.tscn::d4355a1642ed2482cde3ff96d58656af::1728326410::res://.godot/exported/133200997/export-a34095bcd3af6e8ea40ab9ab4f03be5c-Speed_surface.scn
+res://build blocks/city_mesh.tscn::816487ab7c402867d6a3ae8f38e13667::1728344773::res://.godot/exported/133200997/export-2476f1f9fc942466ebdc894b59ce3ff0-city_mesh.scn
+res://build blocks/city_mesh_lib.tres::b08c16897d290a88103dda215c2251eb::1728484744::res://.godot/exported/133200997/export-ca5861c292ee16a2c77e45d7fa460296-city_mesh_lib.res
+res://Character/Bob.tscn::ecfa38c3661dd6b12ac304eb9d0d72e1::1728510898::res://.godot/exported/133200997/export-b840eaa6fd0c8fdca4e403d1786952e1-Bob.scn
+res://Control_Scene/main menu.tscn::119873194847d5c810519df186b57777::1728511199::res://.godot/exported/133200997/export-1107c213e4c0ab2ab374b74acfdda011-main menu.scn
+res://Control_Scene/pause_menu.tscn::699faa78a11d62179f8faf1728e656d7::1728510898::res://.godot/exported/133200997/export-9935f1af8ec91175172e65cec419a84d-pause_menu.scn
+res://enemies/Cubic/cucubic.tscn::e09f3b4e938e16d9718cf6463b043bcd::1727575211::res://.godot/exported/133200997/export-1eb8063900c12cb58d2643b2c7397773-cucubic.scn
+res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn::79d85994e556b76358dd46e6df84781d::1728480546::res://.godot/exported/133200997/export-50fa12db47f27679f5a3789a8f452f9f-basicfisthandleft.scn
+res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn::3105703e1ecbe4ca1ced4077bba4c701::1728480546::res://.godot/exported/133200997/export-c29cd0a5a075a52c44668fedb42b4378-basicfisthandright.scn
+res://Fists/Basic_fist/basicfist.tscn::98d44ba30ca5481c0ca714691ad60f7a::1728178566::res://.godot/exported/133200997/export-1c82a99b29c57a494b52dfa30b799b7a-basicfist.scn
+res://Levels/First_Level/first_level.tscn::d46e4da8f41e07c493d22a8e01b504b3::1728510898::res://.godot/exported/133200997/export-c7da0d16054b45e670c1c399c948de00-first_level.scn
+res://Levels/test_arena.tscn::beee56d7d551f9fde2aa3561e1075b42::1728490972::res://.godot/exported/133200997/export-482ea5e595a8f73398ec665e2379d195-test_arena.scn

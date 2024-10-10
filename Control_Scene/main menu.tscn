@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d17j55vfafuqy"]
+[gd_scene load_steps=8 format=3 uid="uid://d17j55vfafuqy"]
 
 [ext_resource type="Script" path="res://Control_Scene/main menu.gd" id="1_ksjbp"]
 [ext_resource type="FontFile" uid="uid://bu6olu0pe5t32" path="res://build blocks/Font/Xolonium-Regular.otf" id="2_e8phj"]
+[ext_resource type="Texture2D" uid="uid://dll5bhhtoqrh6" path="res://build blocks/unknown.png" id="3_rvt5s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5l2bd"]
 bg_color = Color(0.132552, 0.0395553, 0.524484, 1)
@@ -60,6 +61,7 @@ grow_vertical = 2
 script = ExtResource("1_ksjbp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+top_level = true
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
@@ -75,6 +77,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 2
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "time"
+
 [node name="Test_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -89,7 +97,8 @@ size_flags_vertical = 3
 theme = SubResource("Theme_k5se7")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_e8phj")
-text = "Start"
+text = "Start
+--WIP--"
 
 [node name="Option_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -98,7 +107,7 @@ theme = SubResource("Theme_k5se7")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_e8phj")
 text = "Option
-"
+--WIP--"
 
 [node name="Exit_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -108,6 +117,17 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_e8phj")
 text = "Exit
 "
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 2
+anchor_right = 1.002
+anchor_bottom = 0.997
+offset_left = 4.0
+offset_top = 1.0
+offset_right = -0.84021
+offset_bottom = 0.23999
+texture = ExtResource("3_rvt5s")
 
 [connection signal="pressed" from="VBoxContainer/Test_Button" to="." method="_on_test_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]

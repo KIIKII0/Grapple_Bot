@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cjf5h23u3e447"]
+[gd_scene load_steps=35 format=3 uid="uid://cjf5h23u3e447"]
 
 [ext_resource type="Texture2D" uid="uid://c43f84wcsh8l8" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_0.png" id="1_qyrgs"]
 [ext_resource type="Texture2D" uid="uid://d7hc3qb03ddy" path="res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_1.png" id="2_t054h"]
@@ -25,7 +25,7 @@ var hookpoint_get = false
 @onready var grapple_reach = $grapple_reach
 @onready var parent_hand = get_parent().get_name()
 @onready var character = get_tree().get_nodes_in_group(\"Player\")[0]
-
+@onready var pull_speed = Globvar.pull_speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,16 +34,21 @@ func _ready():
 func _physics_process(delta):
 	#function to display crosshai in place when the raycast collide and dont show him when the character is grappling
 	if grapple_reach.is_colliding() and not grappling:
+		#function that makes crosshair look at object and appear
 		var crosshair_position = grapple_reach.get_collision_point() * 0.998
 		crosshair.global_transform.origin = crosshair_position + grapple_reach.get_collision_normal() * 0.3
-		crosshair.look_at(crosshair_position, Vector3.UP)
+		var direction = crosshair_position - crosshair.global_transform.origin
+		if not Vector3.UP.cross(direction).is_zero_approx():
+			crosshair.look_at(crosshair_position, Vector3.UP)
+		else:
+			pass
 		crosshair.visible = true
 	elif  grapple_reach.is_colliding() == false:
 		crosshair.visible = false
+		
 	#function to actualy grapple
 	if Input.is_action_just_pressed(\"attack_right\") and parent_hand == \"right_arm\":
-		anima.play(\"basic attack\",-1, 2)
-		crosshair.visible = false
+		anima.play(\"eject_rope\",-1, 2)
 		if grapple_reach.is_colliding() and not grappling:
 			grappling = true
 	if grappling:
@@ -54,13 +59,14 @@ func _physics_process(delta):
 			var hook_direction = hookpoint - character.transform.origin
 			if hookpoint_get:
 				rope_update()
-				character.velocity += hook_direction * 3 * delta
+				character.velocity += hook_direction * pull_speed * delta
 		else:
 			grappling = false
 			hookpoint_get = false
 			rope.visible = false
 	#function to cancel grapple when not golding a button
 	if Input.is_action_just_released(\"attack_right\") and parent_hand == \"right_arm\":
+		anima.play(\"fallback_rope\",-1, 2)
 		grappling = false
 		hookpoint_get = false
 		rope.visible = false
@@ -453,23 +459,91 @@ shadow_mesh = SubResource("ArrayMesh_tn43l")
 
 [sub_resource type="Animation" id="Animation_0ydmp"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
+
+[sub_resource type="Animation" id="Animation_56iy4"]
+resource_name = "eject_rope"
+length = 0.35
+tracks/0/type = "position_3d"
+tracks/0/imported = true
 tracks/0/enabled = true
-tracks/0/path = NodePath("hurt_box/CollisionShape3D:disabled")
+tracks/0/path = NodePath("Node/tube2")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
+tracks/0/keys = PackedFloat32Array(0, 1, -0.14375, 0.4375, 0.15, 0.1, 1, -0.08875, 0.3875, 0.15, 0.133333, 1, -0.072625, 0.370438, 0.15, 0.2, 1, -0.053625, 0.333937, 0.15, 0.233333, 1, -0.04525, 0.313812, 0.15, 0.266667, 1, -0.040125, 0.293062, 0.15, 0.3, 1, -0.0373125, 0.272625, 0.15, 0.333333, 1, -0.0328125, 0.253125, 0.15)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node/tube2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, -0.173648, 0.984808, 0.133333, 1, 0, 0, -0.228351, 0.973579, 0.333333, 1, 0, 0, -0.5, 0.866025)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node/tube22")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.025, 0.4875, -0.00625, 0.0666667, 1, 0.1205, 0.4415, -0.00625, 0.1, 1, 0.164125, 0.4205, -0.00625, 0.133333, 1, 0.199875, 0.4, -0.00625, 0.166667, 1, 0.224375, 0.375, -0.00625, 0.2, 1, 0.244375, 0.35, -0.00625, 0.233333, 1, 0.263063, 0.325, -0.00625, 0.266667, 1, 0.275937, 0.3, -0.00625, 0.3, 1, 0.284, 0.275, -0.00625, 0.333333, 1, 0.29375, 0.25, -0.00625)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node/tube22")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0.173648, 0.984808, 0.133333, 1, 0, 0, 0.228351, 0.973579, 0.333333, 1, 0, 0, 0.5, 0.866025)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node/cylinder3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.04375, 0.6, 0.08125, 0.0666667, 1, 0.0275, 0.5375, 0.08125, 0.1, 1, 0.0609375, 0.505, 0.08125, 0.133333, 1, 0.0891875, 0.47075, 0.08125, 0.166667, 1, 0.108438, 0.435, 0.08125, 0.2, 1, 0.124688, 0.3995, 0.08125, 0.233333, 1, 0.139062, 0.361937, 0.08125, 0.266667, 1, 0.148313, 0.323312, 0.08125, 0.333333, 1, 0.160938, 0.245625, 0.08125)
+
+[sub_resource type="Animation" id="Animation_vkbkq"]
+resource_name = "fallback_rope"
+length = 0.23
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node/tube2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.0328125, 0.253125, 0.15, 0.1, 1, -0.0590625, 0.337375, 0.15, 0.229282, 1, -0.14375, 0.4375, 0.15)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node/tube2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 0.866025, 0.229282, 1, 0, 0, 0, 1)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node/tube22")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.29375, 0.25, -0.00625, 0.1, 1, 0.2375, 0.35775, -0.00625, 0.229282, 1, 0.025, 0.4875, -0.00625)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node/tube22")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 0.866025, 0.229282, 1, 0, 0, 0, 1)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node/cylinder3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.160938, 0.245625, 0.08125, 0.1, 1, 0.118688, 0.409375, 0.08125, 0.229282, 1, -0.04375, 0.6, 0.08125)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2f2q6"]
 _data = {
 "RESET": SubResource("Animation_0ydmp"),
-"basic attack": ExtResource("7_t87fh")
+"basic attack": ExtResource("7_t87fh"),
+"eject_rope": SubResource("Animation_56iy4"),
+"fallback_rope": SubResource("Animation_vkbkq")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qrhmv"]
@@ -559,7 +633,6 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hurt_box"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -0.0151616, 0.25912, -6.62762e-10)
 shape = SubResource("CapsuleShape3D_qrhmv")
-disabled = true
 
 [node name="grapple_reach" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105835, 0.262235, 4.62621e-09)
@@ -572,7 +645,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_642rk")
 
 [node name="crosshair" type="Sprite3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5196, 0, 1.53846e-07)
-visible = false
 pixel_size = 0.03
 texture = ExtResource("8_70xj2")
 region_rect = Rect2(0.03, 0, 0, 0)

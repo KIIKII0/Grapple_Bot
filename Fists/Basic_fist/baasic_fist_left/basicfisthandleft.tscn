@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://s12xl6jvj61f"]
+[gd_scene load_steps=35 format=3 uid="uid://s12xl6jvj61f"]
 
 [ext_resource type="Texture2D" uid="uid://c6a7pnl0ah3lf" path="res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_0.png" id="1_xahck"]
 [ext_resource type="Texture2D" uid="uid://40m153yosk8s" path="res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_1.png" id="2_pn1jb"]
@@ -24,6 +24,7 @@ var hookpoint_get = false
 @onready var rope_start = $Node/tube22/rope_start
 @onready var character = get_tree().get_nodes_in_group(\"Player\")[0]
 @onready var rope = $rope
+@onready var pull_speed = Globvar.pull_speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,15 +33,21 @@ func _ready():
 func _physics_process(delta):
 	#function to display crosshai in place when the raycast collide and dont show him when the character is grappling
 	if grapple_reach.is_colliding() and not grappling:
+		#function that makes crosshair look at object and appear
 		var crosshair_position = grapple_reach.get_collision_point() * 0.998
 		crosshair.global_transform.origin = crosshair_position + grapple_reach.get_collision_normal() * 0.3
-		crosshair.look_at(crosshair_position, Vector3.UP)
+		var direction = crosshair_position - crosshair.global_transform.origin
+		if not Vector3.UP.cross(direction).is_zero_approx():
+			crosshair.look_at(crosshair_position, Vector3.UP)
+		else:
+			pass
 		crosshair.visible = true
 	elif  grapple_reach.is_colliding() == false:
 		crosshair.visible = false
+		
 	#function to actualy grapple
 	if Input.is_action_just_pressed(\"attack_left\") and parent_hand == \"left_arm\":
-		anima.play(\"basic attack left\",-1, 2)
+		anima.play(\"eject_rope\",-1, 2)
 		if grapple_reach.is_colliding() and not grappling:
 			grappling = true
 	if grappling:
@@ -51,13 +58,14 @@ func _physics_process(delta):
 			var hook_direction = hookpoint - character.transform.origin
 			if hookpoint_get:
 				rope_update()
-				character.velocity += hook_direction * 3 * delta
+				character.velocity += hook_direction * pull_speed * delta
 		else:
 			grappling = false
 			hookpoint_get = false
 			rope.visible = false
 	#function to cancel grapple when not golding a button
 	if Input.is_action_just_released(\"attack_left\") and parent_hand == \"left_arm\":
+		anima.play(\"fallback_rope\",-1, 2)
 		grappling = false
 		hookpoint_get = false
 		rope.visible = false
@@ -449,22 +457,11 @@ shadow_mesh = SubResource("ArrayMesh_6ujgb")
 
 [sub_resource type="Animation" id="Animation_losog"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("hurt_box/CollisionShape3D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_lpyjd"]
 resource_name = "basic attack left"
 length = 0.583333
+loop_mode = 2
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -500,23 +497,91 @@ tracks/4/path = NodePath("Node/cylinder3")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = PackedFloat32Array(0, 1, -0.04375, 0.6, 0.08125, 0.0666667, 1, 0.0275, 0.5375, 0.08125, 0.1, 1, 0.0609375, 0.505, 0.08125, 0.133333, 1, 0.0891875, 0.47075, 0.08125, 0.166667, 1, 0.108438, 0.435, 0.08125, 0.2, 1, 0.124688, 0.3995, 0.08125, 0.233333, 1, 0.139062, 0.361937, 0.08125, 0.266667, 1, 0.148313, 0.323312, 0.08125, 0.333333, 1, 0.160938, 0.245625, 0.08125, 0.433333, 1, 0.118688, 0.409375, 0.08125, 0.466667, 1, 0.098, 0.460292, 0.08125, 0.583333, 1, -0.04375, 0.6, 0.08125)
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("hurt_box/CollisionShape3D:disabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.0900108, 0.1, 0.4, 0.410031),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [true, true, false, false, true]
-}
+
+[sub_resource type="Animation" id="Animation_8m3bc"]
+resource_name = "eject_rope"
+length = 0.35
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node/tube2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.14375, 0.4375, 0.15, 0.1, 1, -0.08875, 0.3875, 0.15, 0.133333, 1, -0.072625, 0.370438, 0.15, 0.2, 1, -0.053625, 0.333937, 0.15, 0.233333, 1, -0.04525, 0.313812, 0.15, 0.266667, 1, -0.040125, 0.293062, 0.15, 0.3, 1, -0.0373125, 0.272625, 0.15, 0.333333, 1, -0.0328125, 0.253125, 0.15)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node/tube2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, -0.173648, 0.984808, 0.133333, 1, 0, 0, -0.228351, 0.973579, 0.333333, 1, 0, 0, -0.5, 0.866025)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node/tube22")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.025, 0.4875, -0.00625, 0.0666667, 1, 0.1205, 0.4415, -0.00625, 0.1, 1, 0.164125, 0.4205, -0.00625, 0.133333, 1, 0.199875, 0.4, -0.00625, 0.166667, 1, 0.224375, 0.375, -0.00625, 0.2, 1, 0.244375, 0.35, -0.00625, 0.233333, 1, 0.263063, 0.325, -0.00625, 0.266667, 1, 0.275937, 0.3, -0.00625, 0.3, 1, 0.284, 0.275, -0.00625, 0.333333, 1, 0.29375, 0.25, -0.00625)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node/tube22")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.1, 1, 0, 0, 0.173648, 0.984808, 0.133333, 1, 0, 0, 0.228351, 0.973579, 0.333333, 1, 0, 0, 0.5, 0.866025)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node/cylinder3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, -0.04375, 0.6, 0.08125, 0.0666667, 1, 0.0275, 0.5375, 0.08125, 0.1, 1, 0.0609375, 0.505, 0.08125, 0.133333, 1, 0.0891875, 0.47075, 0.08125, 0.166667, 1, 0.108438, 0.435, 0.08125, 0.2, 1, 0.124688, 0.3995, 0.08125, 0.233333, 1, 0.139062, 0.361937, 0.08125, 0.266667, 1, 0.148313, 0.323312, 0.08125, 0.333333, 1, 0.160938, 0.245625, 0.08125)
+
+[sub_resource type="Animation" id="Animation_jpen4"]
+resource_name = "fallback_rope"
+length = 0.233
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node/tube2")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.0328125, 0.253125, 0.15, 0.1, 1, -0.0590625, 0.337375, 0.15, 0.232823, 1, -0.14375, 0.4375, 0.15)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node/tube2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, -0.5, 0.866025, 0.232823, 1, 0, 0, -0.0348995, 0.999391)
+tracks/2/type = "position_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node/tube22")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.29375, 0.25, -0.00625, 0.1, 1, 0.2375, 0.35775, -0.00625, 0.232823, 1, 0.025, 0.4875, -0.00625)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node/tube22")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0.5, 0.866025, 0.232823, 1, 0, 0, 0.0348995, 0.999391)
+tracks/4/type = "position_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node/cylinder3")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.160938, 0.245625, 0.08125, 0.1, 1, 0.118688, 0.409375, 0.08125, 0.232823, 1, -0.04375, 0.6, 0.08125)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7u8f1"]
 _data = {
 "RESET": SubResource("Animation_losog"),
-"basic attack left": SubResource("Animation_lpyjd")
+"basic attack left": SubResource("Animation_lpyjd"),
+"eject_rope": SubResource("Animation_8m3bc"),
+"fallback_rope": SubResource("Animation_jpen4")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5q2uj"]
@@ -568,7 +633,7 @@ mesh = SubResource("ArrayMesh_rnkux")
 skeleton = NodePath("")
 
 [node name="tube2" type="Node3D" parent="Node"]
-transform = Transform3D(0.999858, 0.0168673, 0, -0.0168673, 0.999858, 0, 0, 0, 1, -0.141233, 0.434953, 0.15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14375, 0.4375, 0.15)
 
 [node name="tube" type="MeshInstance3D" parent="Node/tube2"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, -0.3)
@@ -576,7 +641,7 @@ mesh = SubResource("ArrayMesh_cb6fw")
 skeleton = NodePath("")
 
 [node name="tube22" type="Node3D" parent="Node"]
-transform = Transform3D(0.999858, -0.0168673, 0, 0.0168673, 0.999858, 0, 0, 0, 1, 0.0313923, 0.484188, -0.00625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.025, 0.4875, -0.00625)
 
 [node name="tube3" type="MeshInstance3D" parent="Node/tube22"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -587,7 +652,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191976, -0.191051, 0.0156958)
 
 [node name="cylinder3" type="Node3D" parent="Node"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0388576, 0.595178, 0.08125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04375, 0.6, 0.08125)
 
 [node name="cylinder2" type="MeshInstance3D" parent="Node/cylinder3"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, -0.1375)
@@ -619,7 +684,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o52wc")
 
 [node name="crosshair" type="Sprite3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5196, 0, 1.53846e-07)
-visible = false
 pixel_size = 0.03
 texture = ExtResource("7_uofge")
 region_rect = Rect2(0.03, 0, 0, 0)

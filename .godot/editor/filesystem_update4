@@ -1,11 +1,13 @@
-res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn
+res://Levels/First_Level/first_level.tscn
+res://build blocks/city_mesh_lib.tres
 res://Levels/First_Level/water.gdshader
+res://build blocks/build_structure/points.tscn
 res://Control_Scene/main menu.tscn
 res://Control_Scene/pause_menu.tscn
 res://Levels/test_arena.tscn
 res://Character/Bob.tscn
-res://build blocks/build_structure/lava.tscn
-res://build blocks/build_structure/Speed_surface.tscn
-res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn
-res://Levels/First_Level/first_level.tscn
-res://Fists/Basic_fist/basicfist.tscn
+res://Character/Bob.gd
+res://Global_Scripts/Globvar.gd
+res://Levels/First_Level/first_level.gd
+res://Control_Scene/pause_menu.gd
+res://Control_Scene/main menu.gd

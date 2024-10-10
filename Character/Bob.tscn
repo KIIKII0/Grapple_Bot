@@ -85,3 +85,35 @@ theme_override_fonts/font = ExtResource("2_ry2x5")
 theme_override_font_sizes/font_size = 70
 text = "speed"
 clip_text = true
+
+[node name="time_and_score" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.161
+anchor_bottom = 0.113
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 0.879974
+offset_bottom = -0.0400085
+
+[node name="Score" type="Label" parent="UI/time_and_score"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.917647, 0.917647, 0.380392, 0.72549)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("2_ry2x5")
+theme_override_font_sizes/font_size = 30
+text = "SCORE: "
+
+[node name="Speedrun_Time" type="Label" parent="UI/time_and_score"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_ry2x5")
+theme_override_font_sizes/font_size = 20

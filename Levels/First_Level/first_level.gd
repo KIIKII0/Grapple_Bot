@@ -2,16 +2,12 @@ extends Node3D
 
 var mouse_capture
 @onready var player = $Bob
-@onready var enemy = preload("res://enemies/Cubic/cucubic.tscn")
 
-
-
-func _physics_process(delta):
-	get_tree().call_group('Enemies',"update_target_location",player.global_transform.origin)
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mouse_capture = true
+	Globvar.stop = false
 
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):
@@ -25,3 +21,4 @@ func _process(delta):
 			mouse_capture = true
 			get_tree().paused = false
 			$Pause_Menu.visible = false
+		
