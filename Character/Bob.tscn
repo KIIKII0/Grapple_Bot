@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtpsxrfqijcq7"]
+[gd_scene load_steps=5 format=3 uid="uid://dtpsxrfqijcq7"]
 
 [ext_resource type="Script" path="res://Character/Bob.gd" id="1_rwiwa"]
 [ext_resource type="PackedScene" uid="uid://s12xl6jvj61f" path="res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn" id="2_mu4fk"]
 [ext_resource type="PackedScene" uid="uid://cjf5h23u3e447" path="res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn" id="2_r1etf"]
-[ext_resource type="FontFile" uid="uid://cvv4h0icwkof8" path="res://build blocks/Font/Xolonium-Bold.ttf" id="2_ry2x5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvhaa"]
 radius = 0.615
@@ -46,46 +45,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="essential_container" type="VBoxContainer" parent="UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.006
-anchor_top = 0.817
-anchor_right = 0.226
-anchor_bottom = 1.0
-offset_left = 0.48
-offset_top = -0.360046
-offset_right = -0.920013
-grow_vertical = 0
-
-[node name="Health_Bar" type="Label" parent="UI/essential_container"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(6.35326e-06, 0.740654, 0.22988, 0.835294)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 11
-theme_override_fonts/font = ExtResource("2_ry2x5")
-theme_override_font_sizes/font_size = 90
-text = "health"
-clip_text = true
-
-[node name="speedometer" type="Label" parent="UI/essential_container"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_colors/font_color = Color(0.996078, 1, 1, 0.905882)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 11
-theme_override_fonts/font = ExtResource("2_ry2x5")
-theme_override_font_sizes/font_size = 70
-text = "speed"
-clip_text = true
-
 [node name="time_and_score" type="VBoxContainer" parent="UI"]
 layout_mode = 1
 anchors_preset = -1
@@ -95,25 +54,3 @@ offset_left = 1.0
 offset_top = -1.0
 offset_right = 0.879974
 offset_bottom = -0.0400085
-
-[node name="Score" type="Label" parent="UI/time_and_score"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.917647, 0.917647, 0.380392, 0.72549)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("2_ry2x5")
-theme_override_font_sizes/font_size = 30
-text = "SCORE: "
-
-[node name="Speedrun_Time" type="Label" parent="UI/time_and_score"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_ry2x5")
-theme_override_font_sizes/font_size = 20

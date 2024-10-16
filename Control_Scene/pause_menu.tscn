@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdgjmapd785cg"]
 
 [ext_resource type="Script" path="res://Control_Scene/pause_menu.gd" id="1_2jbkn"]
-[ext_resource type="FontFile" uid="uid://ck58vmk5rlg2b" path="res://build blocks/Font/Xolonium-Regular.ttf" id="2_8qwm7"]
+[ext_resource type="FontFile" uid="uid://ck58vmk5rlg2b" path="res://Assets/Font/Xolonium-Regular.ttf" id="2_8qwm7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvsff"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlhth"]
 bg_color = Color(0.132552, 0.0395553, 0.524484, 1)
 border_width_left = 1
 border_width_top = 1
@@ -17,7 +17,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poyia"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_761ko"]
 bg_color = Color(0.223529, 0.0901961, 0.803922, 1)
 border_width_left = 1
 border_width_top = 1
@@ -31,7 +31,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1anhd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_024bc"]
 bg_color = Color(0.355823, 0.361547, 0.98768, 1)
 border_width_left = 1
 border_width_top = 1
@@ -46,9 +46,9 @@ corner_radius_bottom_left = 3
 corner_detail = 1
 
 [sub_resource type="Theme" id="Theme_i2oni"]
-Button/styles/hover = SubResource("StyleBoxFlat_kvsff")
-Button/styles/normal = SubResource("StyleBoxFlat_poyia")
-Button/styles/pressed = SubResource("StyleBoxFlat_1anhd")
+Button/styles/hover = SubResource("StyleBoxFlat_jlhth")
+Button/styles/normal = SubResource("StyleBoxFlat_761ko")
+Button/styles/pressed = SubResource("StyleBoxFlat_024bc")
 
 [node name="Pause_Menu" type="Control"]
 layout_mode = 3

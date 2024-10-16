@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://vbrcmcgmv0du"]
+
+[ext_resource type="Script" path="res://Levels/First_Level/first_level.gd" id="1_qrqxy"]
+[ext_resource type="PackedScene" uid="uid://dtpsxrfqijcq7" path="res://Character/Bob.tscn" id="3_2kqdn"]
+[ext_resource type="PackedScene" uid="uid://dh2wqfe0ut84c" path="res://Assets/level_active_structures/death_zone.tscn" id="4_nrr7t"]
+[ext_resource type="PackedScene" uid="uid://biimgr7053g4j" path="res://Assets/City/skyscraper.tscn" id="5_8qptt"]
+[ext_resource type="PackedScene" uid="uid://bdgjmapd785cg" path="res://Control_Scene/pause_menu.tscn" id="5_hmi15"]
+[ext_resource type="PackedScene" uid="uid://dyklo0ace4hwn" path="res://Assets/level_active_structures/points.tscn" id="6_geomc"]
+[ext_resource type="PackedScene" uid="uid://n8abmnocekxe" path="res://Control_Scene/death_screen.tscn" id="7_dhu4d"]
+[ext_resource type="PackedScene" uid="uid://chitj7w6gq0h5" path="res://Assets/City/platform.tscn" id="7_r8555"]
+[ext_resource type="PackedScene" uid="uid://upl3ilylhrhq" path="res://Assets/City/portal.tscn" id="9_mmx2o"]
+
+[sub_resource type="Environment" id="Environment_btl3r"]
+background_mode = 1
+tonemap_mode = 3
+glow_enabled = true
+glow_normalized = true
+
+[node name="First_Level" type="Node3D"]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0289, -3.95166, -0.843254)
+script = ExtResource("1_qrqxy")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_btl3r")
+
+[node name="Bob" parent="." instance=ExtResource("3_2kqdn")]
+process_mode = 1
+transform = Transform3D(-0.971553, 0, 0.236821, 0, 1, 0, -0.236821, 0, -0.971553, -13.4399, 163.831, 0.227032)
+
+[node name="Pause_Menu" parent="." instance=ExtResource("5_hmi15")]
+
+[node name="death_zone" parent="." instance=ExtResource("4_nrr7t")]
+transform = Transform3D(500, 0, 0, 0, 1, 0, 0, 0, 1000, -207.28, 0, -1.23929)
+
+[node name="Points" type="Node" parent="."]
+
+[node name="Point5" parent="Points" instance=ExtResource("6_geomc")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -317.978, 1.56615, 21.0257)
+
+[node name="city" type="Node" parent="."]
+
+[node name="skyscraper" parent="city" instance=ExtResource("5_8qptt")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -15.8665, 0, 115.613)
+
+[node name="skyscraper2" parent="city" instance=ExtResource("5_8qptt")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 57.9122, 0, 74.3579)
+
+[node name="skyscraper3" parent="city" instance=ExtResource("5_8qptt")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, -20.5298, 0, 235.251)
+
+[node name="skyscraper4" parent="city" instance=ExtResource("5_8qptt")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 48.3315, 0, 186.367)
+
+[node name="skyscraper5" parent="city" instance=ExtResource("5_8qptt")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 30.0651, 0, 323.695)
+
+[node name="Node3D" parent="city" instance=ExtResource("7_r8555")]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -6.91116, 145.434, 0)
+
+[node name="Death_Screen" parent="." instance=ExtResource("7_dhu4d")]
+
+[node name="portal" parent="." instance=ExtResource("9_mmx2o")]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -21.9775, 133.386, 58.68)

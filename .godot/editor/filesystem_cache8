@@ -1,92 +1,51 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1728482342
-::res://addons/::1728338900
-::res://build blocks/::1728510603
-city_mesh.tscn::PackedScene::350963906978381991::1728344773::0::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-city_mesh_lib.tres::MeshLibrary::5335650636723071959::1728484744::0::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-unknown.png::CompressedTexture2D::7955871161328928209::1728510554::1728510605::1::::<><>::
-::res://build blocks/build_structure/::1728510344
-arrow.png::CompressedTexture2D::381075360071126449::1727824923::1727825323::1::::<><>::
-lamp.tscn::PackedScene::6915417609368731827::1724849225::0::1::::<><>::uid://bya5e7hsxhbem::::res://build blocks/build_structure/lamp_0.png<>uid://bxpkfkmdvc1qq::::res://build blocks/build_structure/lamp_1.png
-lamp_0.png::CompressedTexture2D::4072783276374177088::1724754372::1724849225::1::::<><>::
-lamp_1.png::CompressedTexture2D::4032346396511564632::1724754372::1724849225::1::::<><>::
-lava.tscn::PackedScene::7707686772407850968::1728480546::0::1::::<><>::
-points.tscn::PackedScene::8865132277148896253::1728510344::0::1::::<><>::
-Speed_surface.tscn::PackedScene::1083623471164012558::1728326410::0::1::::<><>::uid://fouixml7hv7f::::res://build blocks/build_structure/arrow.png
-::res://build blocks/City/::1728339050
-base.gltf::PackedScene::7190181868551518271::1728338254::1728339042::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-bench.gltf::PackedScene::1387544901248690976::1728338254::1728339042::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-box_A.gltf::PackedScene::6844475073296088421::1728338254::1728339043::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-box_B.gltf::PackedScene::684141985985715455::1728338254::1728339043::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_A.gltf::PackedScene::949386572995030154::1728338254::1728339044::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_A_withoutBase.gltf::PackedScene::322002753117581231::1728338254::1728339044::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_B.gltf::PackedScene::432492475152490541::1728338254::1728339044::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_B_withoutBase.gltf::PackedScene::3669370832352325193::1728338254::1728339045::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_C.gltf::PackedScene::1383883308295203607::1728338254::1728339045::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_C_withoutBase.gltf::PackedScene::5594392903299758438::1728338254::1728339046::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_D.gltf::PackedScene::1644829150100356579::1728338254::1728339046::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_D_withoutBase.gltf::PackedScene::4867028391682148642::1728338254::1728339046::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_E.gltf::PackedScene::7639175186924507611::1728338254::1728339047::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_E_withoutBase.gltf::PackedScene::7872717018989422746::1728338254::1728339047::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_F.gltf::PackedScene::152568343823176945::1728338254::1728339048::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_F_withoutBase.gltf::PackedScene::4835368790273767041::1728338254::1728339048::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_G.gltf::PackedScene::9073591341013070366::1728338254::1728339048::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_G_withoutBase.gltf::PackedScene::6991105518100048715::1728338254::1728339049::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_H.gltf::PackedScene::749110677587089753::1728338254::1728339049::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-building_H_withoutBase.gltf::PackedScene::8471704183879718243::1728338254::1728339050::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-bush.gltf::PackedScene::1928518706874375713::1728338254::1728339050::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-car_hatchback.gltf::PackedScene::3895493966426978131::1728338254::1728339035::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-car_police.gltf::PackedScene::938020067500279743::1728338254::1728339036::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-car_sedan.gltf::PackedScene::2878278842701278711::1728338254::1728339036::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-car_stationwagon.gltf::PackedScene::5721379481124682976::1728338254::1728339036::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-car_taxi.gltf::PackedScene::4063999016924115764::1728338254::1728339036::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-citybits_texture.png::CompressedTexture2D::1061367408470538393::1728338254::1728339050::1::::<><>::
-dumpster.gltf::PackedScene::8686037059856853874::1728338254::1728339037::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-firehydrant.gltf::PackedScene::6768424962278117434::1728338255::1728339037::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-road_corner.gltf::PackedScene::3562485241304549943::1728338255::1728339037::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-road_corner_curved.gltf::PackedScene::5159836047150975248::1728338255::1728339038::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-road_junction.gltf::PackedScene::3020247101506800269::1728338255::1728339038::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-road_straight.gltf::PackedScene::1593900215131929114::1728338255::1728339039::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-road_straight_crossing.gltf::PackedScene::5148329527622413758::1728338255::1728339039::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-road_tsplit.gltf::PackedScene::1697628539885615002::1728338255::1728339039::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-streetlight.gltf::PackedScene::3762068292888755299::1728338255::1728339040::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-trafficlight_A.gltf::PackedScene::2110919425988996073::1728338255::1728339040::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-trafficlight_B.gltf::PackedScene::1804065972897952990::1728338255::1728339041::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-trafficlight_C.gltf::PackedScene::6391691471776601865::1728338255::1728339041::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-trash_A.gltf::PackedScene::2066844640684073437::1728338255::1728339041::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-trash_B.gltf::PackedScene::3045493409008511340::1728338255::1728339041::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-watertower.gltf::PackedScene::5748086856777201861::1728338255::1728339042::1::::<><>::uid://peetip7l1202::::res://build blocks/City/citybits_texture.png
-::res://build blocks/Font/::1728510578
-unknown.png::CompressedTexture2D::5913242988229138188::1728510577::1728510578::1::::<><>::
-Xolonium-Bold.otf::FontFile::6224319758615995652::1723551653::1724255252::1::::<><>::
-Xolonium-Bold.ttf::FontFile::6291933635530567795::1723551653::1724255252::1::::<><>::
-Xolonium-Regular.otf::FontFile::3855064038236478191::1723551653::1724255252::1::::<><>::
-Xolonium-Regular.ttf::FontFile::5538702945936081879::1723551653::1724255252::1::::<><>::
-::res://build blocks/Skybox/::1727828204
-BlueSkySkybox.png::CompressedTexture2D::1572390037534218569::1586804284::1724278486::1::::<><>::
-GreenSky.png::CompressedTexture2D::4462051962255999442::1586803466::1724278567::1::::<><>::
-PurplyBlueSky.png::CompressedTexture2D::5074732148108270538::1586803676::1724278410::1::::<><>::
-SkySkybox.png::CompressedTexture2D::2348440613119500334::1586709590::1724278409::1::::<><>::
-SunsetSky.png::CompressedTexture2D::2850222355080559860::1586802816::1724278409::1::::<><>::
-::res://Character/::1728510344
-Bob.gd::GDScript::-1::1728510157::0::1::::<>CharacterBody3D<>::
-Bob.tscn::PackedScene::8524950627001412688::1728510344::0::1::::<><>::res://Character/Bob.gd<>uid://s12xl6jvj61f::::res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn<>uid://cjf5h23u3e447::::res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn<>uid://cvv4h0icwkof8::::res://build blocks/Font/Xolonium-Bold.ttf
-::res://Control_Scene/::1728510344
-main menu.gd::GDScript::-1::1728510344::0::1::::<>Control<>::
-main menu.tscn::PackedScene::9050833708918897424::1728510344::0::1::::<><>::res://Control_Scene/main menu.gd<>uid://bu6olu0pe5t32::::res://build blocks/Font/Xolonium-Regular.otf
-pause_menu.gd::GDScript::-1::1728510174::0::1::::<>Control<>::
-pause_menu.tscn::PackedScene::2609941386945780842::1728510344::0::1::::<><>::res://Control_Scene/pause_menu.gd<>uid://ck58vmk5rlg2b::::res://build blocks/Font/Xolonium-Regular.ttf
+::res://::1729081136
+export_presets.cfg::TextFile::-1::1728511784::0::1::::<><>::
+::res://Assets/::1728774922
+::res://Assets/City/::1729083793
+platform.gltf::PackedScene::2249398503479642577::1729081407::1729081409::1::::<><>::
+platform.tscn::PackedScene::5281849706042689840::1729081459::0::1::::<><>::uid://dne0w3u6k6phu::::res://Assets/City/uniwersal_white_material.tres
+portal.gltf::PackedScene::65842462998522571::1729083793::1729083796::1::::<><>::
+skyscraper.tscn::PackedScene::2965186717014243163::1729081459::0::1::::<><>::uid://dne0w3u6k6phu::::res://Assets/City/uniwersal_white_material.tres
+uniwersal_white_material.tres::StandardMaterial3D::8081533244648022454::1728996858::0::1::::<><>::
+::res://Assets/Font/::1728658375
+neuropolitical rg.otf::FontFile::2792136437058303564::1728647314::1728658375::1::::<><>::
+rimouski sb.otf::FontFile::1803575964242971083::1728647375::1728658375::1::::<><>::
+Xolonium-Bold.otf::FontFile::6224319758615995652::1723551653::1728658375::1::::<><>::
+Xolonium-Bold.ttf::FontFile::6291933635530567795::1723551653::1728658375::1::::<><>::
+Xolonium-Regular.otf::FontFile::3855064038236478191::1723551653::1728658375::1::::<><>::
+Xolonium-Regular.ttf::FontFile::5538702945936081879::1723551653::1728658375::1::::<><>::
+zekton rg.otf::FontFile::5309489581726169236::1728646865::1728658375::1::::<><>::
+::res://Assets/level_active_structures/::1729081459
+arrow.png::CompressedTexture2D::381075360071126449::1727824923::1728658433::1::::<><>::
+death_zone.tscn::PackedScene::7707686772407850968::1729081459::0::1::::<><>::
+lamp.tscn::PackedScene::6915417609368731827::1728658432::0::1::::<><>::uid://bya5e7hsxhbem::::res://Assets/level_active_structures/lamp_0.png<>uid://bxpkfkmdvc1qq::::res://Assets/level_active_structures/lamp_1.png
+lamp_0.png::CompressedTexture2D::4072783276374177088::1724754372::1728658433::1::::<><>::
+lamp_1.png::CompressedTexture2D::4032346396511564632::1724754372::1728658433::1::::<><>::
+points.tscn::PackedScene::8865132277148896253::1728767582::0::1::::<><>::
+Speed_surface.tscn::PackedScene::1083623471164012558::1728658432::0::1::::<><>::uid://fouixml7hv7f::::res://Assets/level_active_structures/arrow.png
+::res://Assets/Skybox/::1728658352
+::res://Character/::1729081459
+Bob.gd::GDScript::-1::1729074691::0::1::::<>CharacterBody3D<>::
+Bob.tscn::PackedScene::8524950627001412688::1729081459::0::1::::<><>::res://Character/Bob.gd<>uid://s12xl6jvj61f::::res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn<>uid://cjf5h23u3e447::::res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn
+::res://Control_Scene/::1729081459
+death_screen.tscn::PackedScene::980581869973895802::1729074528::0::1::::<><>::uid://ck58vmk5rlg2b::::res://Assets/Font/Xolonium-Regular.ttf
+main menu.gd::GDScript::-1::1728646238::0::1::::<>Control<>::
+main menu.tscn::PackedScene::9050833708918897424::1729081459::0::1::::<><>::res://Control_Scene/main menu.gd<>uid://0xwvrkyamc0r::::res://Assets/Font/rimouski sb.otf
+pause_menu.gd::GDScript::-1::1728572444::0::1::::<>Control<>::
+pause_menu.tscn::PackedScene::2609941386945780842::1729081459::0::1::::<><>::res://Control_Scene/pause_menu.gd<>uid://ck58vmk5rlg2b::::res://Assets/Font/Xolonium-Regular.ttf
 ::res://enemies/::1727828204
 ::res://enemies/Cubic/::1727828204
 cucubic.gd::GDScript::-1::1723224645::0::1::::<>RigidBody3D<>::
 cucubic.tscn::PackedScene::8322993789008875842::1727575211::0::1::::<><>::res://enemies/Cubic/cucubic.gd
 ::res://Fists/::1728180145
-::res://Fists/Basic_fist/::1728180124
+::res://Fists/Basic_fist/::1729079016
 basicfist.tscn::PackedScene::5748478441997056691::1728178566::0::1::::<><>::uid://c43f84wcsh8l8::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_0.png<>uid://d7hc3qb03ddy::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_1.png<>uid://nmsidte3penh::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_2.png<>uid://ba13mcbih7h4q::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_3.png<>uid://ldwo177pt47s::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_4.png<>uid://c8s3vtrrykn1b::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_5.png
 basicfisthand.gd::GDScript::-1::1723222941::0::1::::<>MeshInstance3D<>::
-::res://Fists/Basic_fist/baasic_fist_left/::1728480546
+rope_material.tres::StandardMaterial3D::5193591959551918374::1729079016::0::1::::<><>::
+::res://Fists/Basic_fist/baasic_fist_left/::1729081459
 basic attack left.res::Animation::723647771006833249::1724842172::0::1::::<><>::
-basicfisthandleft.tscn::PackedScene::1318754065237805037::1728480546::0::1::::<><>::uid://c6a7pnl0ah3lf::::res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_0.png<>uid://40m153yosk8s::::res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_1.png<>uid://bo3iy6ongli8c::::res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_2.png<>uid://d4nyjmwdnu5qg::::res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_3.png<>uid://crkw2tkny0i6s::::res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_4.png<>uid://cenkue20wnfer::::res://Fists/Basic_fist/baasic_fist_left/basic_fist_left_hand_5.png<>uid://c1v3am0iipm7k::::res://Fists/Basic_fist/baasic_fist_left/left_hand_png.png
+basicfisthandleft.tscn::PackedScene::1318754065237805037::1729081459::0::1::::<><>::uid://cf82x3dqi5r6u::::res://Fists/Basic_fist/rope_material.tres<>uid://c1v3am0iipm7k::::res://Fists/Basic_fist/baasic_fist_left/left_hand_png.png
 basic_fist_left_hand_0.png::CompressedTexture2D::6950665951774900227::1724841463::1724851808::1::::<><>::
 basic_fist_left_hand_1.png::CompressedTexture2D::2087862563974065420::1724841463::1724851808::1::::<><>::
 basic_fist_left_hand_2.png::CompressedTexture2D::3427397317185314908::1724841463::1724851808::1::::<><>::
@@ -94,9 +53,9 @@ basic_fist_left_hand_3.png::CompressedTexture2D::9223049371776957422::1724841463
 basic_fist_left_hand_4.png::CompressedTexture2D::5988080491065067192::1724841464::1724851808::1::::<><>::
 basic_fist_left_hand_5.png::CompressedTexture2D::5081076791515792981::1724841464::1724851808::1::::<><>::
 left_hand_png.png::CompressedTexture2D::6642803979882851122::1728180133::1728180443::1::::<><>::
-::res://Fists/Basic_fist/basic_fist_right/::1728480546
+::res://Fists/Basic_fist/basic_fist_right/::1729081459
 basic attack.res::Animation::4714040235084472659::1728400022::0::1::::<><>::
-basicfisthandright.tscn::PackedScene::5416698321570415822::1728480546::0::1::::<><>::uid://c43f84wcsh8l8::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_0.png<>uid://d7hc3qb03ddy::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_1.png<>uid://nmsidte3penh::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_2.png<>uid://ba13mcbih7h4q::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_3.png<>uid://ldwo177pt47s::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_4.png<>uid://c8s3vtrrykn1b::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_5.png<>uid://b8frs3metcp36::::res://Fists/Basic_fist/basic_fist_right/basic attack.res<>uid://dim3vjseyke7q::::res://Fists/Basic_fist/basic_fist_right/right_hand.png
+basicfisthandright.tscn::PackedScene::5416698321570415822::1729081459::0::1::::<><>::uid://cf82x3dqi5r6u::::res://Fists/Basic_fist/rope_material.tres<>uid://dim3vjseyke7q::::res://Fists/Basic_fist/basic_fist_right/right_hand.png
 basic_fist_right_hand_0.png::CompressedTexture2D::6866484483443598771::1724838840::1724851818::1::::<><>::
 basic_fist_right_hand_1.png::CompressedTexture2D::277056705031807642::1724838840::1724851818::1::::<><>::
 basic_fist_right_hand_2.png::CompressedTexture2D::938334879705261897::1724838840::1724851818::1::::<><>::
@@ -104,15 +63,15 @@ basic_fist_right_hand_3.png::CompressedTexture2D::2441816117588584246::172483884
 basic_fist_right_hand_4.png::CompressedTexture2D::779632604751671374::1724838840::1724851818::1::::<><>::
 basic_fist_right_hand_5.png::CompressedTexture2D::7127970609494021593::1724838840::1724851818::1::::<><>::
 right_hand.png::CompressedTexture2D::7747283411432586672::1728180129::1728180432::1::::<><>::
-::res://Global_Scripts/::1728510333
-Globvar.gd::GDScript::-1::1728510333::0::1::::<>Node<>::
+::res://Global_Scripts/::1729081318
+Globvar.gd::GDScript::-1::1729081318::0::1::::<>Node<>::
 ::res://Levels/::1728490972
 test_arena.gd::GDScript::-1::1724408871::0::1::::<>Node3D<>::
 test_arena.tscn::PackedScene::5981670461519689576::1728490972::0::1::::<><>::res://Levels/test_arena.gd<>uid://dtpsxrfqijcq7::::res://Character/Bob.tscn<>uid://bdgjmapd785cg::::res://Control_Scene/pause_menu.tscn
-::res://Levels/First_Level/::1728510344
-first_level.gd::GDScript::-1::1728509326::0::1::::<>Node3D<>::
-first_level.tscn::PackedScene::1477066488276893062::1728510344::0::1::::<><>::uid://wnxbfr1ftrp6::::res://build blocks/Skybox/BlueSkySkybox.png<>res://Levels/First_Level/first_level.gd<>uid://dtpsxrfqijcq7::::res://Character/Bob.tscn<>uid://ciavneytx1mh0::::res://build blocks/city_mesh_lib.tres<>uid://bdgjmapd785cg::::res://Control_Scene/pause_menu.tscn<>uid://dyklo0ace4hwn::::res://build blocks/build_structure/points.tscn
-water.gdshader::Shader::-1::1728510344::0::1::::<><>::
+::res://Levels/First_Level/::1729081460
+first_level.gd::GDScript::-1::1729074635::0::1::::<>Node3D<>::
+first_level.tscn::PackedScene::1477066488276893062::1729081459::0::1::::<><>::res://Levels/First_Level/first_level.gd<>uid://dtpsxrfqijcq7::::res://Character/Bob.tscn<>uid://dh2wqfe0ut84c::::res://Assets/level_active_structures/death_zone.tscn<>uid://biimgr7053g4j::::res://Assets/City/skyscraper.tscn<>uid://bdgjmapd785cg::::res://Control_Scene/pause_menu.tscn<>uid://dyklo0ace4hwn::::res://Assets/level_active_structures/points.tscn<>uid://n8abmnocekxe::::res://Control_Scene/death_screen.tscn<>uid://chitj7w6gq0h5::::res://Assets/City/platform.tscn
+water.gdshader::Shader::-1::1729081460::0::1::::<><>::
 ::res://Levels/First_Level/meshes/::1728332736
 ::res://programs/::1727828204
 ::res://programs/FBX2glTF-windows-x86_64/::1727828204

@@ -1,13 +1,18 @@
 res://Levels/First_Level/first_level.tscn
-res://build blocks/city_mesh_lib.tres
 res://Levels/First_Level/water.gdshader
-res://build blocks/build_structure/points.tscn
 res://Control_Scene/main menu.tscn
 res://Control_Scene/pause_menu.tscn
-res://Levels/test_arena.tscn
 res://Character/Bob.tscn
+res://Assets/City/skyscraper.tscn
+res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn
+res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn
 res://Character/Bob.gd
 res://Global_Scripts/Globvar.gd
+res://Assets/City/uniwersal_white_material.tres
+res://Fists/Basic_fist/rope_material.tres
+res://Assets/level_active_structures/lava.tscn
+res://Assets/level_active_structures/death_zone.tscn
+res://Control_Scene/death_screen.tscn
 res://Levels/First_Level/first_level.gd
-res://Control_Scene/pause_menu.gd
-res://Control_Scene/main menu.gd
+res://Assets/City/platform.tscn
+res://Assets/City/portal.tscn

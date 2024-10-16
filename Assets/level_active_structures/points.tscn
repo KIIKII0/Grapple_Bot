@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyklo0ace4hwn"]
+
+[sub_resource type="GDScript" id="GDScript_ncbo7"]
+script/source = "extends Node3D
+
+
+func _on_area_3d_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		Globvar.Score += 1
+		print(Globvar.Score)
+		get_tree().call_group(\"Player\", \"update_score\")
+		queue_free()
+"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ja3jo"]
+radius = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_dj3t6"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oe43w"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ypc5w"]
+noise = SubResource("FastNoiseLite_oe43w")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7seqd"]
+noise_type = 2
+fractal_gain = 0.755
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b5l1a"]
+noise = SubResource("FastNoiseLite_7seqd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mpri"]
+transparency = 1
+depth_draw_mode = 1
+albedo_color = Color(0.576471, 0.572549, 0.00784314, 0.854902)
+emission_enabled = true
+emission = Color(0.961602, 0.961478, 1.54018e-06, 1)
+emission_energy_multiplier = 2.0
+normal_enabled = true
+rim = 0.0
+rim_texture = SubResource("NoiseTexture2D_b5l1a")
+backlight = Color(0.355314, 0.355314, 0.355314, 1)
+detail_mask = SubResource("NoiseTexture2D_ypc5w")
+uv1_triplanar = true
+
+[node name="Point" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+script = SubResource("GDScript_ncbo7")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0543389, 0)
+shape = SubResource("SphereShape3D_ja3jo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_dj3t6")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mpri")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
