@@ -1,12 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1729081136
+::res://::1729585614
 export_presets.cfg::TextFile::-1::1728511784::0::1::::<><>::
 ::res://Assets/::1728774922
-::res://Assets/City/::1729083793
-platform.gltf::PackedScene::2249398503479642577::1729081407::1729081409::1::::<><>::
-platform.tscn::PackedScene::5281849706042689840::1729081459::0::1::::<><>::uid://dne0w3u6k6phu::::res://Assets/City/uniwersal_white_material.tres
-portal.gltf::PackedScene::65842462998522571::1729083793::1729083796::1::::<><>::
-skyscraper.tscn::PackedScene::2965186717014243163::1729081459::0::1::::<><>::uid://dne0w3u6k6phu::::res://Assets/City/uniwersal_white_material.tres
+::res://Assets/City/::1729549756
+platform.tscn::PackedScene::5281849706042689840::1729270327::0::1::::<><>::uid://dne0w3u6k6phu::::res://Assets/City/uniwersal_white_material.tres
+portal.tscn::PackedScene::1435460866506407146::1729270207::0::1::::<><>::uid://dne0w3u6k6phu::::res://Assets/City/uniwersal_white_material.tres
+skyscraper.tscn::PackedScene::2965186717014243163::1729549756::0::1::::<><>::uid://dne0w3u6k6phu::::res://Assets/City/uniwersal_white_material.tres
 uniwersal_white_material.tres::StandardMaterial3D::8081533244648022454::1728996858::0::1::::<><>::
 ::res://Assets/Font/::1728658375
 neuropolitical rg.otf::FontFile::2792136437058303564::1728647314::1728658375::1::::<><>::
@@ -16,36 +15,40 @@ Xolonium-Bold.ttf::FontFile::6291933635530567795::1723551653::1728658375::1::::<
 Xolonium-Regular.otf::FontFile::3855064038236478191::1723551653::1728658375::1::::<><>::
 Xolonium-Regular.ttf::FontFile::5538702945936081879::1723551653::1728658375::1::::<><>::
 zekton rg.otf::FontFile::5309489581726169236::1728646865::1728658375::1::::<><>::
-::res://Assets/level_active_structures/::1729081459
+::res://Assets/level_active_structures/::1729549757
 arrow.png::CompressedTexture2D::381075360071126449::1727824923::1728658433::1::::<><>::
-death_zone.tscn::PackedScene::7707686772407850968::1729081459::0::1::::<><>::
+death_zone.tscn::PackedScene::7707686772407850968::1729549757::0::1::::<><>::
 lamp.tscn::PackedScene::6915417609368731827::1728658432::0::1::::<><>::uid://bya5e7hsxhbem::::res://Assets/level_active_structures/lamp_0.png<>uid://bxpkfkmdvc1qq::::res://Assets/level_active_structures/lamp_1.png
 lamp_0.png::CompressedTexture2D::4072783276374177088::1724754372::1728658433::1::::<><>::
 lamp_1.png::CompressedTexture2D::4032346396511564632::1724754372::1728658433::1::::<><>::
 points.tscn::PackedScene::8865132277148896253::1728767582::0::1::::<><>::
 Speed_surface.tscn::PackedScene::1083623471164012558::1728658432::0::1::::<><>::uid://fouixml7hv7f::::res://Assets/level_active_structures/arrow.png
 ::res://Assets/Skybox/::1728658352
-::res://Character/::1729081459
-Bob.gd::GDScript::-1::1729074691::0::1::::<>CharacterBody3D<>::
-Bob.tscn::PackedScene::8524950627001412688::1729081459::0::1::::<><>::res://Character/Bob.gd<>uid://s12xl6jvj61f::::res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn<>uid://cjf5h23u3e447::::res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn
-::res://Control_Scene/::1729081459
-death_screen.tscn::PackedScene::980581869973895802::1729074528::0::1::::<><>::uid://ck58vmk5rlg2b::::res://Assets/Font/Xolonium-Regular.ttf
+::res://Character/::1729549849
+Bob.gd::GDScript::-1::1729519959::0::1::::<>CharacterBody3D<>::
+Bob.tscn::PackedScene::8524950627001412688::1729549756::0::1::::<><>::res://Character/Bob.gd<>uid://s12xl6jvj61f::::res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn<>uid://cjf5h23u3e447::::res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn<>res://Character/speed_lines.gdshader
+speed_lines.gdshader::Shader::-1::1729549849::0::1::::<><>::
+::res://Control_Scene/::1729549849
+blur.gdshader::Shader::-1::1729549849::0::1::::<><>::
+button_theme.tres::Theme::2438337079261253579::1729543516::0::1::::<><>::
+death_screen.tscn::PackedScene::980581869973895802::1729543467::0::1::::<><>::res://Control_Scene/blur.gdshader<>uid://ck58vmk5rlg2b::::res://Assets/Font/Xolonium-Regular.ttf<>uid://ba0fb5dny7ljn::::res://Control_Scene/button_theme.tres
 main menu.gd::GDScript::-1::1728646238::0::1::::<>Control<>::
-main menu.tscn::PackedScene::9050833708918897424::1729081459::0::1::::<><>::res://Control_Scene/main menu.gd<>uid://0xwvrkyamc0r::::res://Assets/Font/rimouski sb.otf
+main menu.tscn::PackedScene::9050833708918897424::1729549756::0::1::::<><>::res://Control_Scene/main menu.gd<>uid://ba0fb5dny7ljn::::res://Control_Scene/button_theme.tres
 pause_menu.gd::GDScript::-1::1728572444::0::1::::<>Control<>::
-pause_menu.tscn::PackedScene::2609941386945780842::1729081459::0::1::::<><>::res://Control_Scene/pause_menu.gd<>uid://ck58vmk5rlg2b::::res://Assets/Font/Xolonium-Regular.ttf
+pause_menu.tscn::PackedScene::2609941386945780842::1729549756::0::1::::<><>::res://Control_Scene/pause_menu.gd<>uid://ck58vmk5rlg2b::::res://Assets/Font/Xolonium-Regular.ttf<>res://Control_Scene/blur.gdshader<>uid://ba0fb5dny7ljn::::res://Control_Scene/button_theme.tres
 ::res://enemies/::1727828204
 ::res://enemies/Cubic/::1727828204
 cucubic.gd::GDScript::-1::1723224645::0::1::::<>RigidBody3D<>::
 cucubic.tscn::PackedScene::8322993789008875842::1727575211::0::1::::<><>::res://enemies/Cubic/cucubic.gd
 ::res://Fists/::1728180145
-::res://Fists/Basic_fist/::1729079016
+::res://Fists/Basic_fist/::1729170392
 basicfist.tscn::PackedScene::5748478441997056691::1728178566::0::1::::<><>::uid://c43f84wcsh8l8::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_0.png<>uid://d7hc3qb03ddy::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_1.png<>uid://nmsidte3penh::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_2.png<>uid://ba13mcbih7h4q::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_3.png<>uid://ldwo177pt47s::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_4.png<>uid://c8s3vtrrykn1b::::res://Fists/Basic_fist/basic_fist_right/basic_fist_right_hand_5.png
 basicfisthand.gd::GDScript::-1::1723222941::0::1::::<>MeshInstance3D<>::
+hand.gltf::PackedScene::2866869895842135417::1729163266::1729170392::1::::<><>::
 rope_material.tres::StandardMaterial3D::5193591959551918374::1729079016::0::1::::<><>::
-::res://Fists/Basic_fist/baasic_fist_left/::1729081459
+::res://Fists/Basic_fist/baasic_fist_left/::1729549757
 basic attack left.res::Animation::723647771006833249::1724842172::0::1::::<><>::
-basicfisthandleft.tscn::PackedScene::1318754065237805037::1729081459::0::1::::<><>::uid://cf82x3dqi5r6u::::res://Fists/Basic_fist/rope_material.tres<>uid://c1v3am0iipm7k::::res://Fists/Basic_fist/baasic_fist_left/left_hand_png.png
+basicfisthandleft.tscn::PackedScene::1318754065237805037::1729549757::0::1::::<><>::uid://cf82x3dqi5r6u::::res://Fists/Basic_fist/rope_material.tres<>uid://c1v3am0iipm7k::::res://Fists/Basic_fist/baasic_fist_left/left_hand_png.png
 basic_fist_left_hand_0.png::CompressedTexture2D::6950665951774900227::1724841463::1724851808::1::::<><>::
 basic_fist_left_hand_1.png::CompressedTexture2D::2087862563974065420::1724841463::1724851808::1::::<><>::
 basic_fist_left_hand_2.png::CompressedTexture2D::3427397317185314908::1724841463::1724851808::1::::<><>::
@@ -53,9 +56,9 @@ basic_fist_left_hand_3.png::CompressedTexture2D::9223049371776957422::1724841463
 basic_fist_left_hand_4.png::CompressedTexture2D::5988080491065067192::1724841464::1724851808::1::::<><>::
 basic_fist_left_hand_5.png::CompressedTexture2D::5081076791515792981::1724841464::1724851808::1::::<><>::
 left_hand_png.png::CompressedTexture2D::6642803979882851122::1728180133::1728180443::1::::<><>::
-::res://Fists/Basic_fist/basic_fist_right/::1729081459
+::res://Fists/Basic_fist/basic_fist_right/::1729549756
 basic attack.res::Animation::4714040235084472659::1728400022::0::1::::<><>::
-basicfisthandright.tscn::PackedScene::5416698321570415822::1729081459::0::1::::<><>::uid://cf82x3dqi5r6u::::res://Fists/Basic_fist/rope_material.tres<>uid://dim3vjseyke7q::::res://Fists/Basic_fist/basic_fist_right/right_hand.png
+basicfisthandright.tscn::PackedScene::5416698321570415822::1729549756::0::1::::<><>::uid://cf82x3dqi5r6u::::res://Fists/Basic_fist/rope_material.tres<>uid://dim3vjseyke7q::::res://Fists/Basic_fist/basic_fist_right/right_hand.png
 basic_fist_right_hand_0.png::CompressedTexture2D::6866484483443598771::1724838840::1724851818::1::::<><>::
 basic_fist_right_hand_1.png::CompressedTexture2D::277056705031807642::1724838840::1724851818::1::::<><>::
 basic_fist_right_hand_2.png::CompressedTexture2D::938334879705261897::1724838840::1724851818::1::::<><>::
@@ -63,15 +66,16 @@ basic_fist_right_hand_3.png::CompressedTexture2D::2441816117588584246::172483884
 basic_fist_right_hand_4.png::CompressedTexture2D::779632604751671374::1724838840::1724851818::1::::<><>::
 basic_fist_right_hand_5.png::CompressedTexture2D::7127970609494021593::1724838840::1724851818::1::::<><>::
 right_hand.png::CompressedTexture2D::7747283411432586672::1728180129::1728180432::1::::<><>::
-::res://Global_Scripts/::1729081318
-Globvar.gd::GDScript::-1::1729081318::0::1::::<>Node<>::
+::res://Global_Scripts/::1729543435
+Globvar.gd::GDScript::-1::1729543435::0::1::::<>Node<>::
 ::res://Levels/::1728490972
 test_arena.gd::GDScript::-1::1724408871::0::1::::<>Node3D<>::
 test_arena.tscn::PackedScene::5981670461519689576::1728490972::0::1::::<><>::res://Levels/test_arena.gd<>uid://dtpsxrfqijcq7::::res://Character/Bob.tscn<>uid://bdgjmapd785cg::::res://Control_Scene/pause_menu.tscn
-::res://Levels/First_Level/::1729081460
-first_level.gd::GDScript::-1::1729074635::0::1::::<>Node3D<>::
-first_level.tscn::PackedScene::1477066488276893062::1729081459::0::1::::<><>::res://Levels/First_Level/first_level.gd<>uid://dtpsxrfqijcq7::::res://Character/Bob.tscn<>uid://dh2wqfe0ut84c::::res://Assets/level_active_structures/death_zone.tscn<>uid://biimgr7053g4j::::res://Assets/City/skyscraper.tscn<>uid://bdgjmapd785cg::::res://Control_Scene/pause_menu.tscn<>uid://dyklo0ace4hwn::::res://Assets/level_active_structures/points.tscn<>uid://n8abmnocekxe::::res://Control_Scene/death_screen.tscn<>uid://chitj7w6gq0h5::::res://Assets/City/platform.tscn
-water.gdshader::Shader::-1::1729081460::0::1::::<><>::
+::res://Levels/First_Level/::1729549849
+city_1.tscn::PackedScene::6727482898301359348::1729549757::0::1::::<><>::uid://biimgr7053g4j::::res://Assets/City/skyscraper.tscn<>uid://dh2wqfe0ut84c::::res://Assets/level_active_structures/death_zone.tscn
+first_level.gd::GDScript::-1::1729519949::0::1::::<>Node3D<>::
+first_level.tscn::PackedScene::1477066488276893062::1729549756::0::1::::<><>::res://Levels/First_Level/first_level.gd<>uid://dtpsxrfqijcq7::::res://Character/Bob.tscn<>uid://bdgjmapd785cg::::res://Control_Scene/pause_menu.tscn<>uid://dyklo0ace4hwn::::res://Assets/level_active_structures/points.tscn<>uid://n8abmnocekxe::::res://Control_Scene/death_screen.tscn<>uid://c233wpp3mrwpw::::res://Levels/First_Level/city_1.tscn<>uid://upl3ilylhrhq::::res://Assets/City/portal.tscn
+water.gdshader::Shader::-1::1729549849::0::1::::<><>::
 ::res://Levels/First_Level/meshes/::1728332736
 ::res://programs/::1727828204
 ::res://programs/FBX2glTF-windows-x86_64/::1727828204

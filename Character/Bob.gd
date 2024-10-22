@@ -5,7 +5,6 @@ extends CharacterBody3D
 var health: float = max_health
 var SPEED: float
 var normal_speed = Globvar.normal_speed
-var sprint_speed = Globvar.sprint_speed
 var crouch_speed = Globvar.crouch_fall
 var JUMP_VELOCITY = Globvar.jump_velocity
 var boost = false
@@ -14,7 +13,6 @@ var boost_speed
 var sensitivity = 0.12
 var gravity = Globvar.gravity
 var num_of_jumps = 0
-var sprinting = false
 
 enum movement {
 	Walking,
@@ -29,6 +27,7 @@ var cuurent_state: movement = movement.Walking
 @onready var left_arm :=$Head/Camera3D/arms/left_arm
 @onready var player_colision := $CollisionShape3D
 @onready var grapple_reach := $Head/Camera3D/grapple_reach
+@onready var speedlines := $UI/speed_lines
 #function that are responsible for update damage, knockback etc.
 
 func damage(hit_points):
@@ -48,9 +47,11 @@ func speed_boost(status,speed_value = 1):
 
 func die():
 	Globvar.dead = true
+	Globvar.material_color_change(240, 33, 33)
 	
 func _ready():
 	Globvar.dead = false
+	Globvar.material_color_change(255, 255, 255)
 #rotation of the camera with the mouse
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -58,14 +59,20 @@ func _input(event):
 		head.rotate_x(deg_to_rad((-event.relative.y * sensitivity)))
 		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-90),deg_to_rad(90)) 
 #handle speed and number or jumps and also gravity
-
+#speed lines drew
+func update_speed_lines():
+	var lines_speed = velocity.length() / 10
+	var line_density = clamp(lines_speed / 20.0, 0.0, 0.5)
+	print(line_density)
+	speedlines.material.set_shader_parameter("line_density", line_density)
 func _physics_process(delta):
+	update_speed_lines()
 	match cuurent_state:
 		movement.Walking:
 			if boost:
-				SPEED = lerp(SPEED, sprint_speed * boost_speed, delta * 3 )
+				SPEED = lerp(SPEED, normal_speed * boost_speed, delta * 3 )
 			else:
-				SPEED = lerp(SPEED, sprint_speed, delta * 3)
+				SPEED = lerp(SPEED, normal_speed, delta * 3)
 				
 	if is_on_floor():
 		num_of_jumps = 2
@@ -76,7 +83,7 @@ func _physics_process(delta):
 		air_time += delta
 		velocity.y -= (gravity * delta * (1.3 + air_time)) * Globvar.gravity_reversed
 		if cuurent_state == movement.Walking:
-			SPEED = clamp(SPEED,normal_speed,50)
+			SPEED = clamp(SPEED,normal_speed,100)
 
 	# Handle jump and double jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():

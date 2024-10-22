@@ -12,6 +12,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mouse_capture = true
 	enter_count = 0
+	
 #
 
 

@@ -1,54 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdgjmapd785cg"]
+[gd_scene load_steps=6 format=3 uid="uid://bdgjmapd785cg"]
 
 [ext_resource type="Script" path="res://Control_Scene/pause_menu.gd" id="1_2jbkn"]
 [ext_resource type="FontFile" uid="uid://ck58vmk5rlg2b" path="res://Assets/Font/Xolonium-Regular.ttf" id="2_8qwm7"]
+[ext_resource type="Shader" path="res://Control_Scene/blur.gdshader" id="2_e73r3"]
+[ext_resource type="Theme" uid="uid://ba0fb5dny7ljn" path="res://Control_Scene/button_theme.tres" id="3_xhmu4"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlhth"]
-bg_color = Color(0.132552, 0.0395553, 0.524484, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_761ko"]
-bg_color = Color(0.223529, 0.0901961, 0.803922, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_024bc"]
-bg_color = Color(0.355823, 0.361547, 0.98768, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-
-[sub_resource type="Theme" id="Theme_i2oni"]
-Button/styles/hover = SubResource("StyleBoxFlat_jlhth")
-Button/styles/normal = SubResource("StyleBoxFlat_761ko")
-Button/styles/pressed = SubResource("StyleBoxFlat_024bc")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvj8d"]
+shader = ExtResource("2_e73r3")
+shader_parameter/blur = 0.812
+shader_parameter/brightness = 1.0
 
 [node name="Pause_Menu" type="Control"]
 layout_mode = 3
@@ -58,6 +18,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2jbkn")
+
+[node name="blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xvj8d")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -76,7 +46,7 @@ theme_override_constants/separation = 6
 
 [node name="Resume_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_i2oni")
+theme = ExtResource("3_xhmu4")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_8qwm7")
 text = "Resume
@@ -84,7 +54,7 @@ text = "Resume
 
 [node name="Exit_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_i2oni")
+theme = ExtResource("3_xhmu4")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("2_8qwm7")
 text = "Exit

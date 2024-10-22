@@ -1,15 +1,14 @@
 extends Node
 
 var Score = 0
-var gravity = 13
-var pull_speed = 4.5
+var gravity = 20
+var pull_speed = 6
 var stop = false
 var gravity_reversed = 1
 #player variables
-var normal_speed: float = 14.0
+var normal_speed: float = 20.0
 var crouch_fall: float = 3.0
-var sprint_speed: float = 20
-var jump_velocity:float = 15
+var jump_velocity:float = 20
 var dead = false
 
 #first_stag_var
@@ -19,7 +18,7 @@ var best_first_stage_time: float
 #material color
 @onready var material_white = preload("res://Assets/City/uniwersal_white_material.tres")
 @onready var grappling_rope = preload("res://Fists/Basic_fist/rope_material.tres")
-
+@onready var button_theme = preload("res://Control_Scene/button_theme.tres")
 func _ready():
 	material_color_change(255, 255, 255)
 	gravity_reversed = 1
@@ -33,6 +32,7 @@ func material_color_change(red = 1,green = 1,blue= 1):
 	material_white.albedo_color = Color(red,green,blue)
 	material_white.emission = Color(red,green,blue)
 	material_white.emission_energy_multiplier = 1
+	button_theme.get_stylebox("normal", "Button").border_color = Color(red,green,blue)
 	if red and blue and green == 1:
 		grappling_rope.emission_enabled = true
 		grappling_rope.albedo_color = Color(0, 0.278, 0.639)

@@ -1,11 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtpsxrfqijcq7"]
+[gd_scene load_steps=9 format=3 uid="uid://dtpsxrfqijcq7"]
 
 [ext_resource type="Script" path="res://Character/Bob.gd" id="1_rwiwa"]
 [ext_resource type="PackedScene" uid="uid://s12xl6jvj61f" path="res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn" id="2_mu4fk"]
 [ext_resource type="PackedScene" uid="uid://cjf5h23u3e447" path="res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn" id="2_r1etf"]
+[ext_resource type="Shader" path="res://Character/speed_lines.gdshader" id="4_cjyen"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvhaa"]
 radius = 0.615
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gtkyw"]
+frequency = 0.2627
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hdh3i"]
+noise = SubResource("FastNoiseLite_gtkyw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywfr2"]
+shader = ExtResource("4_cjyen")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 0.9
+shader_parameter/line_density = 0.572
+shader_parameter/line_faloff = 0.701
+shader_parameter/mask_size = 0.215
+shader_parameter/mask_edge = 0.552
+shader_parameter/animation_speed = 15.0
+shader_parameter/noise = SubResource("NoiseTexture2D_hdh3i")
 
 [node name="Bob" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_rwiwa")
@@ -28,12 +46,12 @@ target_position = Vector3(0, 0, -50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.637744, 0.379883)
 
 [node name="right_arm" type="Node3D" parent="Head/Camera3D/arms"]
-transform = Transform3D(0.325568, 0.945519, 0, -0.945518, 0.325568, 0, 0, 0, 1, 0.295, 0.315, -0.91)
+transform = Transform3D(0.325568, 0.945519, 0, -0.945518, 0.325568, 0, 0, 0, 1, 0.255, 0.275, -0.9)
 
 [node name="basicfisthandright" parent="Head/Camera3D/arms/right_arm" instance=ExtResource("2_r1etf")]
 
 [node name="left_arm" type="Node3D" parent="Head/Camera3D/arms"]
-transform = Transform3D(0.325568, -0.945519, 0, 0.945518, 0.325568, 0, 0, 0, 1, -0.295, 0.315, -0.91)
+transform = Transform3D(0.325568, -0.945519, 0, 0.945518, 0.325568, 0, 0, 0, 1, -0.255, 0.275, -0.9)
 
 [node name="basicfisthandleft" parent="Head/Camera3D/arms/left_arm" instance=ExtResource("2_mu4fk")]
 
@@ -54,3 +72,12 @@ offset_left = 1.0
 offset_top = -1.0
 offset_right = 0.879974
 offset_bottom = -0.0400085
+
+[node name="speed_lines" type="ColorRect" parent="UI"]
+material = SubResource("ShaderMaterial_ywfr2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

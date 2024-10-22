@@ -1,91 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://d17j55vfafuqy"]
+[gd_scene load_steps=3 format=3 uid="uid://d17j55vfafuqy"]
 
 [ext_resource type="Script" path="res://Control_Scene/main menu.gd" id="1_ksjbp"]
-[ext_resource type="FontFile" uid="uid://0xwvrkyamc0r" path="res://Assets/Font/rimouski sb.otf" id="2_uqwq8"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drhw7"]
-bg_color = Color(0.0492644, 0.464206, 0.635495, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 6
-border_color = Color(0.0233694, 0.330312, 0.458799, 1)
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-expand_margin_left = 4.0
-shadow_color = Color(0.0110876, 0.0110876, 0.0110876, 0.6)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_016tc"]
-bg_color = Color(0.111188, 0.628962, 0.850735, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 6
-border_color = Color(0.0233694, 0.330312, 0.458799, 1)
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-expand_margin_left = 4.0
-shadow_color = Color(0.0110876, 0.0110876, 0.0110876, 0.6)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we0hm"]
-bg_color = Color(0.0509804, 0.462745, 0.635294, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 6
-border_color = Color(0.0233694, 0.330312, 0.458799, 1)
-border_blend = true
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-expand_margin_left = 4.0
-shadow_color = Color(0.0110876, 0.0110876, 0.0110876, 0.6)
-
-[sub_resource type="Theme" id="Theme_0152m"]
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 22
-Button/fonts/font = ExtResource("2_uqwq8")
-Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxFlat_drhw7")
-Button/styles/normal = SubResource("StyleBoxFlat_016tc")
-Button/styles/pressed = SubResource("StyleBoxFlat_we0hm")
-
-[sub_resource type="Theme" id="Theme_tumci"]
-default_font_size = 20
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 22
-Button/fonts/font = ExtResource("2_uqwq8")
-Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxFlat_drhw7")
-Button/styles/normal = SubResource("StyleBoxFlat_016tc")
-Button/styles/pressed = SubResource("StyleBoxFlat_we0hm")
-
-[sub_resource type="Theme" id="Theme_70n2g"]
-default_font_size = 20
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 22
-Button/fonts/font = ExtResource("2_uqwq8")
-Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxFlat_drhw7")
-Button/styles/normal = SubResource("StyleBoxFlat_016tc")
-Button/styles/pressed = SubResource("StyleBoxFlat_we0hm")
-
-[sub_resource type="Theme" id="Theme_wo1bv"]
-default_font_size = 20
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/font_sizes/font_size = 22
-Button/fonts/font = ExtResource("2_uqwq8")
-Button/styles/focus = null
-Button/styles/hover = SubResource("StyleBoxFlat_drhw7")
-Button/styles/normal = SubResource("StyleBoxFlat_016tc")
-Button/styles/pressed = SubResource("StyleBoxFlat_we0hm")
+[ext_resource type="Theme" uid="uid://ba0fb5dny7ljn" path="res://Control_Scene/button_theme.tres" id="2_h7qlp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -98,20 +14,19 @@ script = ExtResource("1_ksjbp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 top_level = true
-clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.414
-anchor_top = 0.722
-anchor_right = 0.586
-anchor_bottom = 0.895
-offset_left = 0.57196
-offset_top = -0.146057
-offset_right = -0.572021
-offset_bottom = -0.250061
+anchor_left = 0.41
+anchor_top = 0.648
+anchor_right = 0.593
+anchor_bottom = 0.872
+offset_left = 0.799927
+offset_top = 0.159973
+offset_right = -0.560059
+offset_bottom = 0.239929
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 2
+grow_vertical = 0
+theme_override_constants/separation = 5
 
 [node name="first_stage_time" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -122,25 +37,25 @@ text = "time"
 [node name="Test_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_0152m")
+theme = ExtResource("2_h7qlp")
 text = "Test"
 
 [node name="Start_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_tumci")
+theme = ExtResource("2_h7qlp")
 text = "Start
 --WIP--"
 
 [node name="Option_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = SubResource("Theme_70n2g")
+theme = ExtResource("2_h7qlp")
 text = "Option
 --WIP--"
 
 [node name="Exit_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_wo1bv")
+theme = ExtResource("2_h7qlp")
 theme_override_constants/outline_size = 1
 text = "Exit
 "

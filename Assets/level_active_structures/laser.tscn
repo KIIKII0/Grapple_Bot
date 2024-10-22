@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4sg74o7ibh3o"]
+
+[ext_resource type="PackedScene" uid="uid://dh2wqfe0ut84c" path="res://Assets/level_active_structures/death_zone.tscn" id="1_la8ng"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dk6be"]
+top_radius = 2.0
+bottom_radius = 2.0
+height = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fb7o"]
+transparency = 1
+albedo_color = Color(1, 0.0405029, 0.0223527, 1)
+emission_enabled = true
+emission = Color(1, 0.0392157, 0.0235294, 1)
+
+[node name="laser" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_dk6be")
+surface_material_override/0 = SubResource("StandardMaterial3D_5fb7o")
+
+[node name="death_area" parent="MeshInstance3D" instance=ExtResource("1_la8ng")]
+transform = Transform3D(4.40952, -2.84217e-14, 0, -1.42109e-14, 8.8668, 0, 0, 0, 4.62577, -0.0272654, 0.0189158, 0.00323865)

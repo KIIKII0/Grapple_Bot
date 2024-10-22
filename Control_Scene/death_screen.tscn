@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://n8abmnocekxe"]
+[gd_scene load_steps=6 format=3 uid="uid://n8abmnocekxe"]
 
+[ext_resource type="Shader" path="res://Control_Scene/blur.gdshader" id="1_5lbar"]
 [ext_resource type="FontFile" uid="uid://ck58vmk5rlg2b" path="res://Assets/Font/Xolonium-Regular.ttf" id="1_slkyx"]
+[ext_resource type="Theme" uid="uid://ba0fb5dny7ljn" path="res://Control_Scene/button_theme.tres" id="2_j3gig"]
 
 [sub_resource type="GDScript" id="GDScript_0i5xi"]
 script/source = "extends Control
@@ -19,52 +21,10 @@ func _on_exit_button_pressed():
 
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvsff"]
-bg_color = Color(0.132552, 0.0395553, 0.524484, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_poyia"]
-bg_color = Color(0.223529, 0.0901961, 0.803922, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1anhd"]
-bg_color = Color(0.355823, 0.361547, 0.98768, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(1, 1, 1, 1)
-border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 1
-
-[sub_resource type="Theme" id="Theme_eixrl"]
-Button/styles/hover = SubResource("StyleBoxFlat_kvsff")
-Button/styles/normal = SubResource("StyleBoxFlat_poyia")
-Button/styles/pressed = SubResource("StyleBoxFlat_1anhd")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j0038"]
+shader = ExtResource("1_5lbar")
+shader_parameter/blur = 1.0
+shader_parameter/brightness = 0.9
 
 [node name="Death_Screen" type="Control"]
 layout_mode = 3
@@ -74,6 +34,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_0i5xi")
+
+[node name="blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_j0038")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -92,7 +62,7 @@ theme_override_constants/separation = 6
 
 [node name="Restart_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_eixrl")
+theme = ExtResource("2_j3gig")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("1_slkyx")
 text = "Restart
@@ -100,7 +70,7 @@ text = "Restart
 
 [node name="Exit_Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_eixrl")
+theme = ExtResource("2_j3gig")
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("1_slkyx")
 text = "Exit
