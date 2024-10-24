@@ -63,9 +63,10 @@ func _input(event):
 func update_speed_lines():
 	var lines_speed = velocity.length() / 10
 	var line_density = clamp(lines_speed / 20.0, 0.0, 0.5)
-	print(line_density)
 	speedlines.material.set_shader_parameter("line_density", line_density)
 func _physics_process(delta):
+	var target_fov = lerp(75.0,115.0, clamp(velocity.length()/100, 0, 1))
+	Camera.fov = lerp(Camera.fov, target_fov, 2.0 * delta)
 	update_speed_lines()
 	match cuurent_state:
 		movement.Walking:
@@ -83,9 +84,9 @@ func _physics_process(delta):
 		air_time += delta
 		velocity.y -= (gravity * delta * (1.3 + air_time)) * Globvar.gravity_reversed
 		if cuurent_state == movement.Walking:
-			SPEED = clamp(SPEED,normal_speed,100)
+			SPEED = clamp(SPEED,normal_speed,50)
 
-	# Handle jump and double jump
+	# Handle jump and double jumpw
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		print(Globvar.Score)
 		if num_of_jumps == 2:

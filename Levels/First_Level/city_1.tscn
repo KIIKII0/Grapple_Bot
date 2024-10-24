@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c233wpp3mrwpw"]
+[gd_scene load_steps=7 format=3 uid="uid://c233wpp3mrwpw"]
 
 [ext_resource type="PackedScene" uid="uid://biimgr7053g4j" path="res://Assets/City/skyscraper.tscn" id="1_u0xgt"]
 [ext_resource type="PackedScene" uid="uid://dh2wqfe0ut84c" path="res://Assets/level_active_structures/death_zone.tscn" id="2_ms21p"]
@@ -8,6 +8,9 @@
 size = Vector2(1000, 500)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p6tev"]
+data = PackedVector3Array(500, 0, 250, -500, 0, 250, 500, 0, -250, -500, 0, 250, -500, 0, -250, 500, 0, -250)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jsw56"]
 data = PackedVector3Array(500, 0, 250, -500, 0, 250, 500, 0, -250, -500, 0, 250, -500, 0, -250, 500, 0, -250)
 
 [node name="city_1" type="Node3D"]
@@ -22,8 +25,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_p6tev")
 
+[node name="StaticBody3D2" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_jsw56")
+
 [node name="death_area" parent="." instance=ExtResource("2_ms21p")]
-transform = Transform3D(1000, 0, 0, 0, 1.5, 0, 0, 0, 300, 0.437, 0.508144, 0.437)
+transform = Transform3D(2000, 0, 0, 0, 1.5, 0, 0, 0, 1000, 0.437, 0.508144, 0.437)
 
 [node name="skyscrapers" type="Node" parent="."]
 
@@ -269,6 +277,12 @@ transform = Transform3D(-3.15316e-07, -2.655e-15, 1, -4.89391, 0.714218, -2.9655
 [node name="laser12" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.18603e-07, 0, 1, 0, 1, 0, -2.71333, 0, -4.37114e-08, 380.614, 103.891, 18.9281)
 
+[node name="laser116" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.18603e-07, 0, 1, 0, 1, 0, -2.71333, 0, -4.37114e-08, 380.614, 69.8245, 18.9281)
+
+[node name="laser115" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.18603e-07, 0, 1, 0, 1, 0, -2.71333, 0, -4.37114e-08, 380.614, 143.266, 18.9281)
+
 [node name="laser64" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.18603e-07, 0, 1, 0, 1, 0, -2.71333, 0, -4.37114e-08, 380.614, 30.3556, 18.9281)
 
@@ -278,6 +292,12 @@ transform = Transform3D(-1.18603e-07, 0, 1, 0, 1, 0, -2.71333, 0, -4.37114e-08, 
 [node name="laser13" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.19863e-07, 0, 1, 0, 1, 0, -2.74215, 0, -4.37114e-08, 340.65, 103.891, 54.9221)
 
+[node name="laser145" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.19863e-07, 0, 1, 0, 1, 0, -2.74215, 0, -4.37114e-08, 340.65, 82.5434, 54.9221)
+
+[node name="laser144" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.19863e-07, 0, 1, 0, 1, 0, -2.74215, 0, -4.37114e-08, 340.65, 128.013, 54.9221)
+
 [node name="laser66" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.7262e-07, 0, 1, -3.20634, 0.583768, -3.54902e-08, -2.30535, -0.811921, -2.55173e-08, 340.65, 35.8443, 54.9221)
 
@@ -286,6 +306,9 @@ transform = Transform3D(-3.51524e-07, -1.06829e-15, 1, 7.04503, 0.482243, 3.8292
 
 [node name="laser15" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.59248e-07, 0, 1, 0, 1, 0, -3.64316, 0, -4.37114e-08, 245.023, 56.6056, 7.717)
+
+[node name="laser141" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.59248e-07, 0, 1, 0, 1, 0, -3.64316, 0, -4.37114e-08, 245.023, 8.05038, 7.717)
 
 [node name="laser32" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.59248e-07, 1.30637e-15, 1, -3.14789, 0.503397, -3.77691e-08, -1.83396, -0.864055, -2.20042e-08, 245.023, 62.0032, -36.599)
@@ -335,6 +358,9 @@ transform = Transform3D(-1.59248e-07, 5.06525e-15, 1, 3.26297, 0.444776, 3.91498
 [node name="laser16" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.59248e-07, 0, 1, 0, 1, 0, -3.64316, 0, -4.37114e-08, 201.965, 63.3945, 3.69408)
 
+[node name="laser140" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.59248e-07, 0, 1, 0, 1, 0, -3.64316, 0, -4.37114e-08, 201.965, 11.6047, 3.69408)
+
 [node name="laser3" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-3.1251e-07, 0, 1, 6.82533, 0.297658, 4.17301e-08, -2.12807, 0.954673, -1.3011e-08, 296.452, 82.8012, -32.7745)
 
@@ -360,10 +386,16 @@ transform = Transform3D(-2.63289e-07, -4.02277e-17, 1.1826, -5.41674, 0.576534, 
 transform = Transform3D(-2.63289e-07, -4.02277e-17, 1.1826, -5.41674, 0.576534, -4.64873e-08, -2.63432, -1.18548, -2.26081e-08, 393.845, 34.1863, -71.1928)
 
 [node name="laser113" parent="lasers" instance=ExtResource("3_vyqef")]
-transform = Transform3D(-2.63289e-07, -4.02277e-17, 1.1826, -5.41674, 0.576534, -4.64873e-08, -2.63432, -1.18548, -2.26081e-08, 428.281, 53.776, -30.828)
+transform = Transform3D(-2.63289e-07, -4.02277e-17, 1.1826, -5.41674, 0.576534, -4.64873e-08, -2.63432, -1.18548, -2.26081e-08, 428.281, 43.0114, -30.828)
 
 [node name="laser62" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-4.17437e-07, 1.04224e-16, 1.1826, 5.29258, 1.07798, 2.86487e-08, -7.9491, 0.717731, -4.30285e-08, 347.467, 76.5639, -91.7393)
+
+[node name="laser118" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.17437e-07, 1.04224e-16, 1.1826, 5.29258, 1.07798, 2.86487e-08, -7.9491, 0.717731, -4.30285e-08, 347.467, 29.8446, -91.7393)
+
+[node name="laser117" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.17437e-07, 1.04224e-16, 1.1826, 5.29258, 1.07798, 2.86487e-08, -7.9491, 0.717731, -4.30285e-08, 347.467, 119.638, -91.7393)
 
 [node name="laser61" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.27187e-07, 1.08725e-16, 1.1826, -1.93956, 1.00707, -3.4458e-08, -2.16897, -0.900553, -3.85337e-08, 301.859, 86.6866, -68.5145)
@@ -377,8 +409,14 @@ transform = Transform3D(-1.72034e-07, 0, 1.1826, 2.34589, 1.0784, 3.08121e-08, -
 [node name="laser59" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-2.68584e-07, 3.54832e-15, 1.1826, 4.80351, 0.799176, 4.04117e-08, -3.83158, 1.0019, -3.22349e-08, 210.194, 55.4736, -79.5087)
 
+[node name="laser143" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.68584e-07, 1.10065e-14, 1.1826, 4.56301, 0.858302, 3.83884e-08, -4.11505, 0.951737, -3.46197e-08, 210.194, 81.2359, -79.5087)
+
 [node name="laser5" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-4.11938e-07, 0, 1, 5.5712, 0.955547, 2.58408e-08, -7.60095, 0.700379, -3.52553e-08, 204.463, 157.43, -63.7872)
+
+[node name="laser142" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.11938e-07, 0, 1, 5.5712, 0.955547, 2.58408e-08, -7.60095, 0.700379, -3.52553e-08, 204.463, 113.532, -63.7872)
 
 [node name="laser17" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(4.09974, 0, 0, 0, 1, 0, 0, 0, 1, 180.85, 191.113, -15.8015)
@@ -388,6 +426,15 @@ transform = Transform3D(2.24451, -0.497623, 0.536416, 1.94156, 0.807671, 0, -1.4
 
 [node name="laser19" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(3.29283, 0, 0, 0, 1, 0, 0, 0, 1, 130.34, 132.804, 31.5226)
+
+[node name="laser137" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(3.29283, 0, 0, 0, 1, 0, 0, 0, 1, 130.34, 96.1973, 31.5226)
+
+[node name="laser138" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(3.29283, 0, 0, 0, 1, 0, 0, 0, 1, 130.34, 59.5157, 31.5226)
+
+[node name="laser139" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(3.29283, 0, 0, 0, 1, 0, 0, 0, 1, 130.34, 15.5364, 31.5226)
 
 [node name="laser20" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(2.11618, 0, 0, 0, 1, 0, 0, 0, 1, 316.507, 102.672, -51.4092)
@@ -407,11 +454,17 @@ transform = Transform3D(-1.37865e-07, 0, 1, 2.20231, 0.715839, 3.05222e-08, -2.2
 [node name="laser8" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.50035e-07, 0, 1, 2.29285, 0.74416, 2.91993e-08, -2.55426, 0.668001, -3.25283e-08, 114.687, 111.899, 56.3126)
 
+[node name="laser136" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.50035e-07, 0, 1, 2.29285, 0.74416, 2.91993e-08, -2.55426, 0.668001, -3.25283e-08, 114.687, 83.9678, 56.3126)
+
 [node name="laser69" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.65345e-07, 0, 1, 2.52682, 0.675994, 2.91993e-08, -2.8149, 0.606812, -3.25283e-08, 114.687, 49.6948, 56.3126)
 
 [node name="laser9" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.23678e-07, 0, 1, 0, 1, 0, -2.82943, 0, -4.37114e-08, 66.0502, 111.899, 56.3126)
+
+[node name="laser135" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.23678e-07, 0, 1, 0, 1, 0, -2.82943, 0, -4.37114e-08, 66.0502, 81.8738, 56.3126)
 
 [node name="laser70" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-3.15521e-07, 0, 1, 6.40216, 0.461888, 3.87693e-08, -3.33403, 0.886938, -2.01898e-08, 66.0502, 40.0169, 56.3126)
@@ -431,8 +484,14 @@ transform = Transform3D(-1.23678e-07, 0, 1, 0, 1, 0, -2.82943, 0, -4.37114e-08, 
 [node name="laser11" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-2.10085e-07, 0, 1, -3.19359, 0.781632, -2.90451e-08, -3.59172, -0.694991, -3.2666e-08, 73.8449, 163.456, -25.58)
 
+[node name="laser120" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.10085e-07, 0, 1, -3.19359, 0.781632, -2.90451e-08, -3.59172, -0.694991, -3.2666e-08, 73.8449, 205.054, -25.58)
+
 [node name="laser82" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-2.10085e-07, 0, 1, -3.19359, 0.781632, -2.90451e-08, -3.59172, -0.694991, -3.2666e-08, 109.18, 140.727, -25.58)
+
+[node name="laser119" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.10085e-07, 0, 1, -3.19359, 0.781632, -2.90451e-08, -3.59172, -0.694991, -3.2666e-08, 109.18, 118.91, -25.58)
 
 [node name="laser83" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-2.10085e-07, -2.4691e-15, 1, 4.62925, 0.281182, 4.21022e-08, -1.29207, 1.00742, -1.17512e-08, 109.18, 80.5746, 19.7865)
@@ -448,6 +507,9 @@ transform = Transform3D(-4.38412e-07, 1.37924e-15, 1, 9.32216, 0.320392, 4.06278
 
 [node name="laser21" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.99767e-07, 0, 1, 1.52411, 0.942752, 1.45775e-08, -4.3085, 0.333494, -4.1209e-08, -18.7655, 99.8397, -31.6878)
+
+[node name="laser121" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.99767e-07, 0, 1, 1.52411, 0.942752, 1.45775e-08, -4.3085, 0.333494, -4.1209e-08, -18.7655, 72.4971, -31.6878)
 
 [node name="laser88" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.99767e-07, 0, 1, -2.68477, 0.809253, -2.56787e-08, -3.69839, -0.587461, -3.53736e-08, -18.7655, 46.825, -31.6878)
@@ -509,17 +571,62 @@ transform = Transform3D(-2.91935e-07, -4.20197e-16, 1, 4.58478, 0.874154, 3.0006
 [node name="laser22" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.99767e-07, 0, 1, -2.67482, 0.810829, -2.55835e-08, -3.70559, -0.585283, -3.54425e-08, -33.9692, 140.955, 13.2803)
 
+[node name="laser146" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.99767e-07, 0, 1, 3.28442, 0.695348, 3.14142e-08, -3.17783, 0.718673, -3.03946e-08, -33.9692, 168.503, 53.9033)
+
+[node name="laser147" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.99767e-07, 0, 1, 3.28442, 0.695348, 3.14142e-08, -3.17783, 0.718673, -3.03946e-08, -33.9692, 142.932, 53.9033)
+
+[node name="laser148" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.99767e-07, 0, 1, 3.28442, 0.695348, 3.14142e-08, -3.17783, 0.718673, -3.03946e-08, -33.9692, 37.9087, 53.9033)
+
+[node name="laser149" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.99767e-07, 0, 1, -3.67477, 0.594514, -3.51477e-08, -2.717, -0.804085, -2.59871e-08, -33.9692, 69.1333, 53.9033)
+
+[node name="laser150" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.99767e-07, 0, 1, -3.67477, 0.594514, -3.51477e-08, -2.717, -0.804085, -2.59871e-08, -33.9692, 97.4841, 53.9033)
+
+[node name="laser134" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-1.99767e-07, 0, 1, -2.67482, 0.810829, -2.55835e-08, -3.70559, -0.585283, -3.54425e-08, -33.9692, 101.742, 13.2803)
+
 [node name="laser87" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-1.99767e-07, 0, 1, 3.76709, 0.566176, 3.60306e-08, -2.5875, 0.824284, -2.47483e-08, -33.9692, 45.831, 15.0148)
 
 [node name="laser23" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-4.35559e-07, 0, 1, 4.94678, 0.733277, 2.17003e-08, -8.64982, 0.419357, -3.79445e-08, -82.9704, 186.022, -5.08473)
 
+[node name="laser122" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.35559e-07, 0, 1, 4.94678, 0.733277, 2.17003e-08, -8.64982, 0.419357, -3.79445e-08, -82.9704, 161.27, -5.08473)
+
+[node name="laser123" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.35559e-07, 0, 1, 4.94678, 0.733277, 2.17003e-08, -8.64982, 0.419357, -3.79445e-08, -82.9704, 133.481, -5.08473)
+
+[node name="laser124" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.35559e-07, 0, 1, 4.94678, 0.733277, 2.17003e-08, -8.64982, 0.419357, -3.79445e-08, -82.9704, 98.8401, -5.08473)
+
+[node name="laser125" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.35559e-07, 0, 1, -3.76256, 0.782187, -1.65053e-08, -9.22676, -0.318966, -4.04755e-08, -82.9704, 67.0151, -5.08473)
+
 [node name="laser24" parent="lasers" instance=ExtResource("3_vyqef")]
-transform = Transform3D(-2.01407e-07, 0, 1, -3.53917, 0.746352, -3.35749e-08, -2.9504, -0.895291, -2.79895e-08, -136.998, 186.022, 7.7386)
+transform = Transform3D(-2.01407e-07, 0, 1, -3.53917, 0.746352, -3.35749e-08, -2.9504, -0.895291, -2.79895e-08, -136.998, 186.022, 5.9894)
+
+[node name="laser126" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.01407e-07, 0, 1, -3.53917, 0.746352, -3.35749e-08, -2.9504, -0.895291, -2.79895e-08, -136.998, 156.345, 5.9894)
+
+[node name="laser127" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.01407e-07, 0, 1, 3.54349, 0.745039, 3.3616e-08, -2.94521, 0.896384, -2.79402e-08, -136.998, 122.598, 5.9894)
+
+[node name="laser128" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.01407e-07, 0, 1, 3.54349, 0.745039, 3.3616e-08, -2.94521, 0.896384, -2.79402e-08, -136.998, 46.4804, 5.9894)
+
+[node name="laser129" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.01407e-07, 0, 1, 3.54349, 0.745039, 3.3616e-08, -2.94521, 0.896384, -2.79402e-08, -136.998, 66.7589, 5.9894)
 
 [node name="laser27" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-2.73664e-07, 3.4394e-15, 1, -1.38417, 1.22919, -9.66411e-09, -6.10578, -0.278657, -4.26297e-08, -186.711, 252.88, 39.1013)
+
+[node name="laser133" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-2.73664e-07, 3.4394e-15, 1, -1.38417, 1.22919, -9.66411e-09, -6.10578, -0.278657, -4.26297e-08, -186.711, 280.31, 39.1013)
 
 [node name="laser92" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-5.17638e-07, 0, 1, 10.7491, 0.528889, 3.96767e-08, -4.96929, 1.14404, -1.83425e-08, -186.711, 76.0308, 39.1013)
@@ -589,6 +696,18 @@ transform = Transform3D(-2.5879e-07, 0, 1, 0.110867, 0.855037, 8.18554e-10, -5.9
 
 [node name="laser25" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(-4.98693e-07, 3.38696e-15, 1, 7.38393, 1.12884, 2.82907e-08, -8.69698, 0.95841, -3.33215e-08, -173.412, 272.115, -59.3545)
+
+[node name="laser130" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.95602e-07, 7.19616e-09, 1, -7.23102, 1.14539, -3.12919e-08, -8.82452, -0.938563, -3.05205e-08, -173.412, 188.54, -59.3545)
+
+[node name="laser131" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.87314e-07, 1.37483e-08, 1, -6.28895, 1.23552, -3.12919e-08, -9.51888, -0.816285, -3.05205e-08, -173.412, 129.204, -59.3545)
+
+[node name="laser132" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.95429e-07, 7.39372e-09, 1, -7.20388, 1.14827, -3.12919e-08, -8.84669, -0.935041, -3.05205e-08, -173.412, 76.001, -59.3545)
+
+[node name="laser151" parent="lasers" instance=ExtResource("3_vyqef")]
+transform = Transform3D(-4.58478e-07, 0, 1, 0, 1.48082, 0, -10.4887, 0, -4.37114e-08, -173.412, 29.2339, -59.3545)
 
 [node name="laser26" parent="lasers" instance=ExtResource("3_vyqef")]
 transform = Transform3D(8.87704, 0, 0.392869, 0, 1.48082, 0, -7.14166, 0, 0.488334, -199.98, 341.475, -30.1921)

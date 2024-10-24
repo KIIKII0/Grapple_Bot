@@ -2,11 +2,11 @@ extends Node
 
 var Score = 0
 var gravity = 20
-var pull_speed = 6
+var pull_speed = 8
 var stop = false
 var gravity_reversed = 1
 #player variables
-var normal_speed: float = 20.0
+var normal_speed: float = 30.0
 var crouch_fall: float = 3.0
 var jump_velocity:float = 20
 var dead = false

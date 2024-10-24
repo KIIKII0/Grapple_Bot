@@ -1,7 +1,7 @@
+ColorRect
 Node
 MeshInstance3D
 AspectRatioContainer
-ColorRect
 Node3D
 CollisionShape3D
 Area3D

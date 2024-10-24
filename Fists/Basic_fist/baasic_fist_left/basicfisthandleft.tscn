@@ -40,6 +40,7 @@ func _physics_process(delta):
 		if grapple_reach.is_colliding() and not grappling:
 			grappling = true
 	if grappling:
+		character.gravity = 0
 		if not hookpoint_get:
 			hookpoint = grapple_reach.get_collision_point()
 			hookpoint_get = true
@@ -52,6 +53,9 @@ func _physics_process(delta):
 			grappling = false
 			hookpoint_get = false
 			rope.visible = false
+	else:
+		character.gravity = Globvar.gravity
+			
 	#function to cancel grapple when not golding a button
 	if Input.is_action_just_released(\"attack_left\") and parent_hand == \"left_arm\":
 		grappling = false
