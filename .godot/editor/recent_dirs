@@ -1,12 +1,12 @@
-res://Assets/level_active_structures
-res://Control_Scene
 res://Levels/First_Level
+res://Global_Scripts
+C:/Users/Krystian/Desktop
+res://Control_Scene
+res://Assets/level_active_structures
 res://Assets/City
 res://Fists/Basic_fist
-C:/Users/Krystian/Desktop
 C:/Users/Krystian/Desktop/Grapple_bot/Grapple_Bot/programs/FBX2glTF-windows-x86_64
 res://Levels/First_Level/meshes
 res://Fists/Basic_fist/baasic_fist_left
 res://Levels
 res://enemies/Cubic
-res://Global_Scripts

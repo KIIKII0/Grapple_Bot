@@ -1,18 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://vbrcmcgmv0du"]
+[gd_scene load_steps=15 format=3 uid="uid://vbrcmcgmv0du"]
 
 [ext_resource type="Script" path="res://Levels/First_Level/first_level.gd" id="1_qrqxy"]
+[ext_resource type="Shader" path="res://Levels/First_Level/stars.gdshader" id="2_4baps"]
 [ext_resource type="PackedScene" uid="uid://dtpsxrfqijcq7" path="res://Character/Bob.tscn" id="3_2kqdn"]
 [ext_resource type="PackedScene" uid="uid://bdgjmapd785cg" path="res://Control_Scene/pause_menu.tscn" id="5_hmi15"]
 [ext_resource type="PackedScene" uid="uid://dyklo0ace4hwn" path="res://Assets/level_active_structures/points.tscn" id="6_geomc"]
 [ext_resource type="PackedScene" uid="uid://n8abmnocekxe" path="res://Control_Scene/death_screen.tscn" id="7_dhu4d"]
 [ext_resource type="PackedScene" uid="uid://c233wpp3mrwpw" path="res://Levels/First_Level/city_1.tscn" id="8_dc40l"]
 [ext_resource type="PackedScene" uid="uid://upl3ilylhrhq" path="res://Assets/City/portal.tscn" id="9_mmx2o"]
+[ext_resource type="PackedScene" uid="uid://cyqev6higoxr6" path="res://Control_Scene/victory_menu.tscn" id="9_ufer0"]
+[ext_resource type="PackedScene" uid="uid://dh2wqfe0ut84c" path="res://Assets/level_active_structures/death_zone.tscn" id="10_n8v2k"]
+[ext_resource type="PackedScene" uid="uid://d1inm57fk6151" path="res://Levels/First_Level/city_reversed.tscn" id="11_ln8vd"]
 
-[sub_resource type="Environment" id="Environment_btl3r"]
-background_mode = 1
-tonemap_mode = 3
-glow_enabled = true
-glow_normalized = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwwh0"]
+shader = ExtResource("2_4baps")
+shader_parameter/sky_color = Color(0, 0, 0, 1)
+shader_parameter/star_base_color = Color(1, 1, 1, 1)
+shader_parameter/star_hue_offset = 0.6
+shader_parameter/star_intensity = 0.061
+shader_parameter/star_twinkle_speed = 0.279
+shader_parameter/star_twinkle_intensity = 0.2
+shader_parameter/layer_scale = 20.0
+shader_parameter/layer_scale_step = 10.0
+shader_parameter/layers_count = 3
+
+[sub_resource type="Sky" id="Sky_xdr58"]
+sky_material = SubResource("ShaderMaterial_lwwh0")
+
+[sub_resource type="Environment" id="Environment_0y6rk"]
+background_mode = 2
+sky = SubResource("Sky_xdr58")
 
 [node name="First_Level" type="Node3D"]
 process_mode = 3
@@ -20,22 +37,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.0289, -3.95166, -0.843254)
 script = ExtResource("1_qrqxy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_btl3r")
+environment = SubResource("Environment_0y6rk")
 
 [node name="Bob" parent="." instance=ExtResource("3_2kqdn")]
 process_mode = 1
-transform = Transform3D(-0.0426081, 0, 0.999092, 0, 1, 0, -0.999092, 0, -0.0426081, 433.857, 98.9368, -4.81085)
-
-[node name="Pause_Menu" parent="." instance=ExtResource("5_hmi15")]
+transform = Transform3D(-0.0426081, 0, 0.999092, 0, 1, 0, -0.999092, 0, -0.0426081, 414.797, 89.4644, -4.81085)
 
 [node name="Points" type="Node" parent="."]
 
 [node name="Point5" parent="Points" instance=ExtResource("6_geomc")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -449.549, 356.636, 0.798191)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1529.67, 776.858, -3.8928)
+
+[node name="death_areas" type="Node3D" parent="."]
+
+[node name="death_area" parent="death_areas" instance=ExtResource("10_n8v2k")]
+transform = Transform3D(5000, 0, 0, 0, 1, 0, 0, 0, 2000, -1780.34, 0.508144, 0.437)
+
+[node name="death_area2" parent="death_areas" instance=ExtResource("10_n8v2k")]
+transform = Transform3D(5000, 0, 0, 0, 1, 0, 0, 0, 2000, -1780.34, 450, 0.437)
 
 [node name="portal" parent="." instance=ExtResource("9_mmx2o")]
-transform = Transform3D(500, 0, 0, 0, -500, 4.37114e-05, 0, -4.37114e-05, -500, -18.9897, 258.565, 883.62)
+transform = Transform3D(-488.676, 105.807, -9.24997e-06, 105.807, 488.676, -4.27215e-05, -2.12816e-12, -4.37114e-05, -500, -500.047, 321.237, -5.12655)
+
+[node name="city_1" parent="." instance=ExtResource("8_dc40l")]
+
+[node name="city_reversed" parent="." instance=ExtResource("11_ln8vd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -922.164, 0, -37.732)
+
+[node name="Vicotry_menu" parent="." instance=ExtResource("9_ufer0")]
 
 [node name="Death_Screen" parent="." instance=ExtResource("7_dhu4d")]
 
-[node name="city_1" parent="." instance=ExtResource("8_dc40l")]
+[node name="Pause_Menu" parent="." instance=ExtResource("5_hmi15")]

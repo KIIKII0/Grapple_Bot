@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 #vars 
-@export var max_health: float = 20
+@export var max_health: float = 1
 var health: float = max_health
 var SPEED: float
 var normal_speed = Globvar.normal_speed
@@ -48,6 +48,7 @@ func speed_boost(status,speed_value = 1):
 func die():
 	Globvar.dead = true
 	Globvar.material_color_change(240, 33, 33)
+	$UI/speed_lines.visible = false
 	
 func _ready():
 	Globvar.dead = false
@@ -65,6 +66,7 @@ func update_speed_lines():
 	var line_density = clamp(lines_speed / 20.0, 0.0, 0.5)
 	speedlines.material.set_shader_parameter("line_density", line_density)
 func _physics_process(delta):
+	print(health)
 	var target_fov = lerp(75.0,115.0, clamp(velocity.length()/100, 0, 1))
 	Camera.fov = lerp(Camera.fov, target_fov, 2.0 * delta)
 	update_speed_lines()

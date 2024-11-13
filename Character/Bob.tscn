@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtpsxrfqijcq7"]
+[gd_scene load_steps=10 format=3 uid="uid://dtpsxrfqijcq7"]
 
 [ext_resource type="Script" path="res://Character/Bob.gd" id="1_rwiwa"]
 [ext_resource type="PackedScene" uid="uid://s12xl6jvj61f" path="res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn" id="2_mu4fk"]
 [ext_resource type="PackedScene" uid="uid://cjf5h23u3e447" path="res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn" id="2_r1etf"]
 [ext_resource type="Shader" path="res://Character/speed_lines.gdshader" id="4_cjyen"]
+[ext_resource type="Script" path="res://Character/fps_counter.gd" id="5_anwuv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvhaa"]
 radius = 0.615
@@ -63,16 +64,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="time_and_score" type="VBoxContainer" parent="UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.161
-anchor_bottom = 0.113
-offset_left = 1.0
-offset_top = -1.0
-offset_right = 0.879974
-offset_bottom = -0.0400085
-
 [node name="speed_lines" type="ColorRect" parent="UI"]
 material = SubResource("ShaderMaterial_ywfr2")
 layout_mode = 1
@@ -81,3 +72,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="fps_counter" type="Label" parent="UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.057
+anchor_bottom = 0.049
+offset_right = 0.0399933
+offset_bottom = -0.280003
+theme_override_colors/font_color = Color(0.223529, 1, 0.223529, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "FPS:"
+script = ExtResource("5_anwuv")

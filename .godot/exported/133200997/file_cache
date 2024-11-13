@@ -1,15 +1,23 @@
-res://build blocks/build_structure/lamp.tscn::2071405cc6aaaf60e28d41094136a2e0::1724849225::res://.godot/exported/133200997/export-ace71cf8678a82630e3f42417c716af5-lamp.scn
-res://build blocks/build_structure/lava.tscn::a7b1f56177e86253d608a45fa86d5204::1728480546::res://.godot/exported/133200997/export-c3cbc2daf1454eda089f0e1bff23f77d-lava.scn
-res://build blocks/build_structure/points.tscn::174e97d0abd0a30a7cdc7c0cfce006c4::1728510898::res://.godot/exported/133200997/export-22d5b747151bf040be3e7406ecf9100c-points.scn
-res://build blocks/build_structure/Speed_surface.tscn::d4355a1642ed2482cde3ff96d58656af::1728326410::res://.godot/exported/133200997/export-a34095bcd3af6e8ea40ab9ab4f03be5c-Speed_surface.scn
-res://build blocks/city_mesh.tscn::816487ab7c402867d6a3ae8f38e13667::1728344773::res://.godot/exported/133200997/export-2476f1f9fc942466ebdc894b59ce3ff0-city_mesh.scn
-res://build blocks/city_mesh_lib.tres::b08c16897d290a88103dda215c2251eb::1728484744::res://.godot/exported/133200997/export-ca5861c292ee16a2c77e45d7fa460296-city_mesh_lib.res
-res://Character/Bob.tscn::ecfa38c3661dd6b12ac304eb9d0d72e1::1728510898::res://.godot/exported/133200997/export-b840eaa6fd0c8fdca4e403d1786952e1-Bob.scn
-res://Control_Scene/main menu.tscn::119873194847d5c810519df186b57777::1728511199::res://.godot/exported/133200997/export-1107c213e4c0ab2ab374b74acfdda011-main menu.scn
-res://Control_Scene/pause_menu.tscn::699faa78a11d62179f8faf1728e656d7::1728510898::res://.godot/exported/133200997/export-9935f1af8ec91175172e65cec419a84d-pause_menu.scn
-res://enemies/Cubic/cucubic.tscn::e09f3b4e938e16d9718cf6463b043bcd::1727575211::res://.godot/exported/133200997/export-1eb8063900c12cb58d2643b2c7397773-cucubic.scn
-res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn::79d85994e556b76358dd46e6df84781d::1728480546::res://.godot/exported/133200997/export-50fa12db47f27679f5a3789a8f452f9f-basicfisthandleft.scn
-res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn::3105703e1ecbe4ca1ced4077bba4c701::1728480546::res://.godot/exported/133200997/export-c29cd0a5a075a52c44668fedb42b4378-basicfisthandright.scn
-res://Fists/Basic_fist/basicfist.tscn::98d44ba30ca5481c0ca714691ad60f7a::1728178566::res://.godot/exported/133200997/export-1c82a99b29c57a494b52dfa30b799b7a-basicfist.scn
-res://Levels/First_Level/first_level.tscn::d46e4da8f41e07c493d22a8e01b504b3::1728510898::res://.godot/exported/133200997/export-c7da0d16054b45e670c1c399c948de00-first_level.scn
-res://Levels/test_arena.tscn::beee56d7d551f9fde2aa3561e1075b42::1728490972::res://.godot/exported/133200997/export-482ea5e595a8f73398ec665e2379d195-test_arena.scn
+res://Character/Bob.tscn::6e8834ae2dfc5b250d3f97fb5e5c4803::1730292489::res://.godot/exported/133200997/export-b840eaa6fd0c8fdca4e403d1786952e1-Bob.scn
+res://Control_Scene/main menu.tscn::40fd75a661f78e159b603d733fb3f668::1730292489::res://.godot/exported/133200997/export-1107c213e4c0ab2ab374b74acfdda011-main menu.scn
+res://Control_Scene/pause_menu.tscn::40f35f542aca9d6719723a34e905501d::1730292489::res://.godot/exported/133200997/export-9935f1af8ec91175172e65cec419a84d-pause_menu.scn
+res://enemies/Cubic/cucubic.tscn::e09f3b4e938e16d9718cf6463b043bcd::1727571611::res://.godot/exported/133200997/export-1eb8063900c12cb58d2643b2c7397773-cucubic.scn
+res://Fists/Basic_fist/baasic_fist_left/basicfisthandleft.tscn::1926fd58269770e93803f67410501832::1730125321::res://.godot/exported/133200997/export-50fa12db47f27679f5a3789a8f452f9f-basicfisthandleft.scn
+res://Fists/Basic_fist/basic_fist_right/basicfisthandright.tscn::0a4a7c1d4afbfac7b0228186e41296a4::1730125321::res://.godot/exported/133200997/export-c29cd0a5a075a52c44668fedb42b4378-basicfisthandright.scn
+res://Fists/Basic_fist/basicfist.tscn::98d44ba30ca5481c0ca714691ad60f7a::1728174966::res://.godot/exported/133200997/export-1c82a99b29c57a494b52dfa30b799b7a-basicfist.scn
+res://Levels/First_Level/first_level.tscn::d934e762e55bd6008b228a2d719061c0::1730292618::res://.godot/exported/133200997/export-c7da0d16054b45e670c1c399c948de00-first_level.scn
+res://Levels/test_arena.tscn::beee56d7d551f9fde2aa3561e1075b42::1728487372::res://.godot/exported/133200997/export-482ea5e595a8f73398ec665e2379d195-test_arena.scn
+res://Assets/City/platform.tscn::827c834313ca5ea6b5bb62a8f4945550::1729266727::res://.godot/exported/133200997/export-bc5a9a7d77aa6c698ad9c7d43c4b5993-platform.scn
+res://Assets/City/portal.tscn::2b99d73348da1f5517cf0301ae5d77b7::1729266607::res://.godot/exported/133200997/export-00e5b5f20fdf9d3a7cc3c9ee76cc7e68-portal.scn
+res://Assets/City/skyscraper.tscn::096f6588d389d00351a06e4305d3bbca::1730125321::res://.godot/exported/133200997/export-3c6fe337670e695a0b4a4b2e8ecd7bab-skyscraper.scn
+res://Assets/City/uniwersal_white_material.tres::c1b512df711503c23209f8eca04bce78::1728993258::res://.godot/exported/133200997/export-0b4e74cd30e602f0e5d11c752f4e27e9-uniwersal_white_material.res
+res://Assets/level_active_structures/death_zone.tscn::2a2ab2eba769b828823f5a3d38919703::1730292489::res://.godot/exported/133200997/export-30309898a9354bfec5faa28317d5b668-death_zone.scn
+res://Assets/level_active_structures/laser.tscn::76d64540da394e8739fbd4d637ed677f::1730292489::res://.godot/exported/133200997/export-d589fd4b28334da3847891b790526613-laser.scn
+res://Assets/level_active_structures/points.tscn::a16ab67f55a2621b3874875f68b699b2::1728763982::res://.godot/exported/133200997/export-91f4e15110733d253b9c4f2707bd6afd-points.scn
+res://Assets/level_active_structures/Speed_surface.tscn::7373e06fbf9c2885f8236b6ee9afd21d::1728654832::res://.godot/exported/133200997/export-35367c9d9ad71e1a6735f9969063b231-Speed_surface.scn
+res://Control_Scene/button_theme.tres::e9e47d8e26a83def794038a61806f6f5::1730292267::res://.godot/exported/133200997/export-efca0adec8efd3c5779690e3ff1f41d4-button_theme.res
+res://Control_Scene/death_screen.tscn::ef285809162bdb2738d6e3f40871b912::1730292489::res://.godot/exported/133200997/export-37aad462311226f9179429c497598913-death_screen.scn
+res://Control_Scene/option_menu.tscn::1cc1a4a14f04eaca893cd939a1b1ce9f::1730292490::res://.godot/exported/133200997/export-a6c71fc7e18ba9bcab50ab756a799ede-option_menu.scn
+res://Control_Scene/victory_menu.tscn::18b83e58e4c63ae3b011ebc82a739998::1730292489::res://.godot/exported/133200997/export-0a9faa93d3577ad162cd322153e33791-victory_menu.scn
+res://Fists/Basic_fist/rope_material.tres::216aad1d9a28dcaed3980ed71086c38c::1729586314::res://.godot/exported/133200997/export-a6a63391d3604f1625ace84e78788702-rope_material.res
+res://Levels/First_Level/city_1.tscn::22e80c867e32524983f92d6f34151497::1730125321::res://.godot/exported/133200997/export-78a035c317f513893d04833aeb84c6cc-city_1.scn

@@ -21,7 +21,6 @@ var best_first_stage_time: float
 @onready var button_theme = preload("res://Control_Scene/button_theme.tres")
 func _ready():
 	material_color_change(255, 255, 255)
-	gravity_reversed = 1
 	
 	
 func material_color_change(red = 1,green = 1,blue= 1):

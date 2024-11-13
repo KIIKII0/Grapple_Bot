@@ -101,7 +101,7 @@ transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 0, 0, 0)
 script = SubResource("GDScript_dbvi5")
 
 [node name="inner" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.313682, 0, 0.949441, 0, 1, 0, -0.949441, 0, -0.313682, 0, 0, 0)
+transform = Transform3D(0.849799, 0, 0.52693, 0, 1, 0, -0.52693, 0, 0.849799, 0, 0, 0)
 mesh = SubResource("ArrayMesh_n33v8")
 skeleton = NodePath("")
 
@@ -111,7 +111,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_to3bk")
 
 [node name="outer" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.803096, 0, 0.595682, 0, 1, 0, -0.595682, 0, -0.803096, 0, 0, 0)
+transform = Transform3D(0.444542, 0, -0.895646, 0, 1, 0, 0.895646, 0, 0.444542, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ak7wg")
 skeleton = NodePath("")
 

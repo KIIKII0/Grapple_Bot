@@ -1,0 +1,91 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyqev6higoxr6"]
+
+[ext_resource type="Script" path="res://Control_Scene/victory_menu.gd" id="1_iywfa"]
+[ext_resource type="Shader" path="res://Control_Scene/blur.gdshader" id="2_gpc7m"]
+[ext_resource type="Theme" uid="uid://ba0fb5dny7ljn" path="res://Control_Scene/button_theme.tres" id="3_tw7nd"]
+[ext_resource type="FontFile" uid="uid://ck58vmk5rlg2b" path="res://Assets/Font/Xolonium-Regular.ttf" id="4_4gla6"]
+[ext_resource type="FontFile" uid="uid://cuxdvwohmkxfo" path="res://Assets/Font/Xolonium-Bold.otf" id="5_6chpr"]
+[ext_resource type="FontFile" uid="uid://0xwvrkyamc0r" path="res://Assets/Font/rimouski sb.otf" id="6_bwq04"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvj8d"]
+shader = ExtResource("2_gpc7m")
+shader_parameter/blur = 0.812
+shader_parameter/brightness = 1.0
+
+[node name="Victory_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iywfa")
+
+[node name="blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xvj8d")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.452
+anchor_top = 0.458
+anchor_right = 0.548
+anchor_bottom = 0.542
+offset_left = 0.295959
+offset_top = 0.215973
+offset_right = -0.296021
+offset_bottom = -0.216034
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Restart_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tw7nd")
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_4gla6")
+text = "Resume
+"
+
+[node name="Exit_Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_tw7nd")
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_4gla6")
+text = "Exit
+"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.145
+anchor_top = 0.155
+anchor_right = 0.855
+anchor_bottom = 0.376
+offset_left = 140.6
+offset_top = -0.399994
+offset_right = -140.6
+offset_bottom = -0.0800171
+grow_horizontal = 2
+theme_override_constants/separation = 6
+
+[node name="Victory" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_6chpr")
+theme_override_font_sizes/font_size = 120
+text = "CONGRATULATIONS"
+
+[node name="time" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_bwq04")
+
+[connection signal="pressed" from="VBoxContainer/Restart_Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart_Button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]

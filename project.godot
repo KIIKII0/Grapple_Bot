@@ -18,13 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globvar="*res://Global_Scripts/Globvar.gd"
+Settings="*res://Global_Scripts/settings.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=2560
+window/size/viewport_height=1440
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 

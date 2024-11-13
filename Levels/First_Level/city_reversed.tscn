@@ -1,0 +1,215 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1inm57fk6151"]
+
+[ext_resource type="PackedScene" uid="uid://biimgr7053g4j" path="res://Assets/City/skyscraper.tscn" id="2_gu2gk"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4qf84"]
+size = Vector2(1000, 500)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_p6tev"]
+data = PackedVector3Array(500, 0, 250, -500, 0, 250, 500, 0, -250, -500, 0, 250, -500, 0, -250, 500, 0, -250)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jsw56"]
+data = PackedVector3Array(500, 0, 250, -500, 0, 250, 500, 0, -250, -500, 0, 250, -500, 0, -250, 500, 0, -250)
+
+[node name="city_reversed" type="Node3D"]
+
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969273, 0, 0, 0, 1, 0, 0, 0, 0.546931, -0.815765, 0, -25.2944)
+visible = false
+mesh = SubResource("PlaneMesh_4qf84")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_p6tev")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_jsw56")
+
+[node name="city" type="Node3D" parent="."]
+
+[node name="skyscraper" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1808.54, 0, 0, 0, 393.208, 0, 0, 0, 1000, 426.541, 0, 39.1252)
+
+[node name="skyscraper43" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1808.54, 0, 0, 0, 604.081, 0, 0, 0, 1441.37, 426.541, 0, -4.80831)
+
+[node name="skyscraper2" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 700, 0, 0, 0, 1000, 250.84, 0, 39.1252)
+
+[node name="skyscraper3" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 345.825, 0, 39.1252)
+
+[node name="skyscraper44" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1865.54, 0, 0, 0, 625.085, 0, 0, 0, 1000, 345.825, 0, 3.27689)
+
+[node name="skyscraper27" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 112.433, 0, 39.1252)
+
+[node name="skyscraper28" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1278.32, 0, 0, 0, 1389.79, 0, 0, 0, 1000, 70.7272, 0, 39.1252)
+
+[node name="skyscraper52" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1278.32, 0, 0, 0, 2536.31, 0, 0, 0, 1000, 70.7272, 0, 1.24282)
+
+[node name="skyscraper35" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1278.32, 0, 0, 0, 1389.79, 0, 0, 0, 1000, -21.6595, 0, 39.1252)
+
+[node name="skyscraper53" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(2976.11, 0, 0, 0, 1218.4, 0, 0, 0, 1285.77, -21.6595, 0, 0.848503)
+
+[node name="skyscraper55" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1482.74, 0, 0, 0, 1591.68, 0, 0, 0, 1285.77, -129.603, 0, -12.9411)
+
+[node name="skyscraper60" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1472.52, 0, 0, 0, 2075.04, 0, 0, 0, 1881.3, -177.218, 0, 8.08816)
+
+[node name="skyscraper64" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1472.52, 0, 0, 0, 3062.96, 0, 0, 0, 1352.71, -242.95, 0, 8.08816)
+
+[node name="skyscraper68" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1472.52, 0, 0, 0, 2388.51, 0, 0, 0, 1352.71, -299.677, 0, 8.08816)
+
+[node name="skyscraper71" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1472.52, 0, 0, 0, 1528.93, 0, 0, 0, 1352.71, -346.153, 0, 8.08816)
+
+[node name="skyscraper70" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(2814.84, 0, 0, 0, 1648.07, 0, 0, 0, 1352.71, -299.677, 0, -35.445)
+
+[node name="skyscraper72" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1472.52, 0, 0, 0, 804.286, 0, 0, 0, 2258.13, -370.569, 0, 81.4884)
+
+[node name="skyscraper73" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1472.52, 0, 0, 0, 1108.7, 0, 0, 0, 2258.13, -370.569, 0, -85.6311)
+
+[node name="skyscraper42" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1278.32, 0, 0, 0, 2361.4, 0, 0, 0, 1000, -72.808, 0, 39.1252)
+
+[node name="skyscraper6" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1500, 0, 0, 0, 1000, 304.077, 0, -46.4421)
+
+[node name="skyscraper24" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1500, 0, 0, 0, 1000, 111.418, 0, -46.4421)
+
+[node name="skyscraper51" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1283.17, 0, 0, 0, 1382.21, 111.418, 0, 7.93899)
+
+[node name="skyscraper25" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1500, 0, 0, 0, 2547.32, 77.9683, 0, -54.9899)
+
+[node name="skyscraper40" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1575.13, 0, 0, 0, 1627.04, 0, 0, 0, 1583.72, -71.461, 0, -54.9899)
+
+[node name="skyscraper58" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1575.13, 0, 0, 0, 2816.11, 0, 0, 0, 1583.72, -135.677, 0, -54.9899)
+
+[node name="skyscraper65" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1575.13, 0, 0, 0, 1646.81, 0, 0, 0, 3015.63, -241.36, 0, -54.9899)
+
+[node name="skyscraper15" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1082.54, 0, 0, 0, 1504.83, 157.23, 0, -56.8578)
+
+[node name="skyscraper50" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1397.04, 0, 0, 0, 2187.09, 0, 0, 0, 1504.83, 157.23, 0, -13.8137)
+
+[node name="skyscraper32" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 2218.81, 0, 0, 0, 1504.83, 157.23, 0, -112.568)
+
+[node name="skyscraper31" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1082.54, 0, 0, 0, 1504.83, 111.308, 0, -111.643)
+
+[node name="skyscraper36" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1645.17, 0, 0, 0, 1504.83, 40.7509, 0, -111.643)
+
+[node name="skyscraper37" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1393.36, 0, 0, 0, 2167.65, -17.9734, 0, -111.643)
+
+[node name="skyscraper57" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1852.52, 0, 0, 0, 2167.65, -83.1626, 0, -111.643)
+
+[node name="skyscraper61" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1525.33, 0, 0, 0, 2303.4, 0, 0, 0, 2167.65, -156.079, 0, -111.643)
+
+[node name="skyscraper66" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1525.33, 0, 0, 0, 1621.73, 0, 0, 0, 1568.54, -223.587, 0, -128.126)
+
+[node name="skyscraper67" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1525.33, 0, 0, 0, 2277.65, 0, 0, 0, 1716.54, -292.707, 0, -98.9299)
+
+[node name="skyscraper26" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1619.11, 0, 0, 0, 1490.29, 0, 0, 0, 1545.73, 221.208, 0, -106.041)
+
+[node name="skyscraper18" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1082.54, 0, 0, 0, 1504.83, 157.23, 0, 33.474)
+
+[node name="skyscraper7" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1500, 0, 0, 0, 800, 0, 0, 0, 1000, 345.825, 0, -47.2933)
+
+[node name="skyscraper8" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 393.738, 0, -46.2498)
+
+[node name="skyscraper46" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 488.967, 0, 0, 0, 1201.82, 434.616, 0, -46.2498)
+
+[node name="skyscraper9" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 250.84, 0, 106.862)
+
+[node name="skyscraper20" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 126.291, 0, 82.4703)
+
+[node name="skyscraper29" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 71.3724, 0, 82.4703)
+
+[node name="skyscraper34" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 2115.71, 0, 0, 0, 1329.71, -25.0433, 0, 82.4703)
+
+[node name="skyscraper41" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1703.72, 0, 0, 0, 2124.12, -80.3558, 0, 82.4703)
+
+[node name="skyscraper59" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 2281.57, 0, 0, 0, 1375.22, -180.219, 0, 80.629)
+
+[node name="skyscraper63" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1494.85, 0, 0, 0, 2442.44, -239.743, 0, 80.629)
+
+[node name="skyscraper10" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1500, 0, 0, 0, 1000, 384.825, 0, 39.1252)
+
+[node name="skyscraper45" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 1786.3, 0, 0, 0, 1000, 384.825, 0, 4.56973)
+
+[node name="skyscraper16" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1244.73, 0, 0, 0, 1041.29, 0, 0, 0, 1000, 405.45, 0, 81.8911)
+
+[node name="skyscraper11" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(2141.95, 0, 0, 0, 500, 0, 0, 0, 1000, 392.185, 0, -85.9966)
+
+[node name="skyscraper54" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1033.28, 0, 0, 0, 778.435, 0, 0, 0, 1000, 409.67, 0, -122.384)
+
+[node name="skyscraper12" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(2141.95, 0, 0, 0, 500, 0, 0, 0, 1000, 210.849, 0, -47.2933)
+
+[node name="skyscraper13" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 490.149, 0, 0, 0, 1464.33, 250.84, 0, 71.3567)
+
+[node name="skyscraper23" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 490.149, 0, 0, 0, 1464.33, 191.964, 0, 71.3567)
+
+[node name="skyscraper19" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 490.149, 0, 0, 0, 1464.33, 200.194, 0, 35.9269)
+
+[node name="skyscraper17" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1292.73, 0, 0, 0, 490.149, 0, 0, 0, 2857.89, 298.974, 0, 71.3567)
+
+[node name="skyscraper48" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1292.73, 0, 0, 0, 1034.28, 0, 0, 0, 2012.89, 298.974, 0, 5.54338)
+
+[node name="skyscraper14" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 640.08, 0, 0, 0, 4111.38, 304.077, 0, -96.9555)
+
+[node name="skyscraper38" parent="city" instance=ExtResource("2_gu2gk")]
+transform = Transform3D(1000, 0, 0, 0, 990.904, 0, 0, 0, 1929.93, 258.586, 0, -96.9555)

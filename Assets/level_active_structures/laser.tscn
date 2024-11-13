@@ -22,3 +22,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5fb7o")
 
 [node name="death_area" parent="MeshInstance3D" instance=ExtResource("1_la8ng")]
 transform = Transform3D(4.40952, -2.84217e-14, 0, -1.42109e-14, 8.8668, 0, 0, 0, 4.62577, -0.0272654, 0.0189158, 0.00323865)
+damaga_dealt = 5.0
